@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>About • GIS Developer</title>
+<link rel="stylesheet" href="styles.css"/>
+<script defer src="main.js"></script>
+
+<!-- ICON SPRITE -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 4h16v16H4z"/><path stroke-width="2" d="M4 6l8 6 8-6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2" stroke-width="2"/><path stroke-width="2" d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="7" width="18" height="13" rx="2" stroke-width="2"/><path stroke-width="2" d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="5" stroke-width="2"/><path stroke-width="2" d="M8 13l-2 8 6-3 6 3-2-8"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M17 11a4 4 0 10-3-7M2 21a7 7 0 0114 0M15 21a6 6 0 1112 0"/></symbol>
+  <symbol id="i-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 18h6M10 22h4"/><path stroke-width="2" d="M12 2a7 7 0 00-4 13 4 4 0 002 3h4a4 4 0 002-3 7 7 0 00-4-13z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 22l7.8-8.6 1-1a5.5 5.5 0 000-7.8z"/></symbol>
+</svg>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true"
+        style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+    
+      <!-- NEW: compact brand for phones -->
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu">
+      <svg width="22" height="22"><use href="#i-user"/></svg>
+    </button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-map-pin"/></svg> Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-code"/></svg> Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-folder"/></svg> Projects</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-user"/></svg> About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer><svg width="18" height="18"><use href="#i-github"/></svg> GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <!-- Hero -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:48px">
+        <div>
+          <span class="badge badge-emerald mb16"><svg width="16" height="16"><use href="#i-map-pin"/></svg>Full-Stack .NET • GIS Developer</span>
+          <h1 class="h1">
+            <span class="text-grad-slate">Bridging Coding</span><br/>
+            <span class="text-grad-slate">& Geography</span><br/>
+            <span class="text-grad-emerald">& Technology</span>
+          </h1>
+          
+          <p class="lead mb24">
+              I’m Suad Arzimanlı. I am a .NET/C# developer working with GIS. Most of my work is building web apps, services, asset management systems around maps, various of data, asset data and etc.
+              </p>            
+              <p class="text-muted mb16">
+                I use C#, ASP.NET (MVC/Web API), Entity Framework, SQL Server, JavaScript/HTML/CSS, and Python. On the GIS side: ArcGIS Pro/ArcMap/ArcGIS Online, Experience Builder, and the Google Maps API. I also design geodatabases and handle QA/QC for spatial data.
+              </p>          
+              <p class="text-muted">
+                Recent projects include Cityworks workflows (311/potholes), Tree Management, and DOT/Highway tools—integrating REST APIs, ArcGIS Feature Services, Siebel 311, and internal databases.
+          </p>
+          <div class="flex gap12" style="flex-wrap:wrap">
+            <a href="mailto:suad.arzimanli@gmail.com" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-mail"/></svg> Get In Touch</a>
+          </div>
+        </div>
+
+        <div>
+          <div>
+          <div class="round-xl shadow-2xl" style="background:linear-gradient(135deg,#10b981,#2563eb,#8b5cf6);padding:24px">
+            <div class="round-lg" style="background:rgba(255,255,255,.08);backdrop-filter:blur(6px);padding:20px;color:#fff">
+              <div class="flex items-center gap12 mb16">
+                <div class="round-lg flex items-center justify-center" style="width:48px;height:48px;background:rgba(255,255,255,.18)">
+                  <svg width="24" height="24" style="color:#fff"><use href="#i-lightbulb"/></svg>
+                </div>
+                <div>
+                  <div class="h3 m0" style="color:#fff">Always learning</div>
+                  <div class="text-white-70"></div>
+                </div>
+              </div>
+            
+              <div class="flex items-start gap12">
+                <svg width="16" height="16" style="flex:0 0 16px;color:#fff;margin-top:4px">
+                  <use href="#i-target"/>
+                </svg>
+              
+                <!-- Right column: text + divider + badges -->
+                <div style="flex:1">
+                  <p class="text-white-80" style="margin:0 0 12px 0;">
+                    I like to learn and I enjoy it. I want my work to achieve something, some goal and lead to somewhere.
+                  </p>
+                
+                  <hr style="border:0;border-top:1px solid rgba(255,255,255,.15);margin:8px 0 12px"/>
+                
+                  <div class="flex gap8 mb24" style="flex-wrap:wrap">
+                    <span class="badge badge-outline">C# / .NET</span>
+                    <span class="badge badge-outline">GIS</span>
+                    <span class="badge badge-outline">ASP.NET Core</span>
+                    <span class="badge badge-outline">JavaScript</span>
+                    <span class="badge badge-outline">ArcGIS Pro</span>
+                    <span class="badge badge-outline">ArcGIS Online</span>
+                    <span class="badge badge-outline">Experience Builder</span>
+                    <span class="badge badge-outline">Cityworks AMS</span>
+                    <span class="badge badge-outline">Google Maps API</span>
+                    <span class="badge badge-outline">SQL Server</span>
+                    <span class="badge badge-outline">Python</span>
+                    <span class="badge badge-outline">REST APIs</span>
+                    <span class="badge badge-outline">Geodatabase Design</span>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="center mb32">
+        <h2 class="h2">Professional Journey</h2>
+        <p class="lead">My career journey and progression as a developer</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item mb20">
+          <div class="timeline-dot"><svg width="32" height="32" style="color:#fff"><use href="#i-briefcase"/></svg></div>
+            <article class="card" style="flex:1">
+              <div class="card-body">
+                <div class="flex" style="justify-content:space-between;gap:16px;flex-wrap:wrap">
+                  <div>
+                    <div class="h3">Full-Stack .NET &amp; GIS Developer</div>
+                    <div style="color:#059669;font-weight:700">DZ CIS LLC — Washington, DC (Remote)</div>
+                    <div class="text-muted">2023–2025</div>
+                  </div>
+                </div>
+              
+                <p class="text-muted">
+                  Built enterprise asset &amp; geospatial systems for public infrastructure, from .NET backends and APIs to map-driven UIs and data pipelines.
+                </p>
+              
+                <div class="mb12" style="display:flex;gap:8px;flex-wrap:wrap">
+                  <span class="badge badge-outline">C# / .NET (MVC)</span>
+                  <span class="badge badge-outline">ASP.NET</span>
+                  <span class="badge badge-outline">Entity Framework</span>
+                  <span class="badge badge-outline">JavaScript</span>
+                  <span class="badge badge-outline">SQL Server</span>
+                  <span class="badge badge-outline">Python</span>
+                  <span class="badge badge-outline">ArcGIS Pro</span>
+                  <span class="badge badge-outline">ArcMap</span>
+                  <span class="badge badge-outline">Experience Builder</span>
+                  <span class="badge badge-outline">Google Maps API</span>
+                  <span class="badge badge-outline">Cityworks AMS</span>
+                  <span class="badge badge-outline">Siebel 311</span>
+                  <span class="badge badge-outline">REST APIs / Postman</span>
+                  <span class="badge badge-outline">Enterprise Geodatabase</span>
+                  <span class="badge badge-outline">Agile / Scrum</span>
+                </div>
+              
+                <div>
+                  <strong>Key Contributions</strong>                   
+                  <hr class="my16"/>
+
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Developed full-stack enterprise apps for geospatial asset management—integrating Google Maps API, .NET MVC, and ArcGIS services for Tree Management, 311/Pothole, and DOT services.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Built interactive, map-driven tools: custom markers, clustering, radius filters, dynamic overlays, and location-based search.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Automated and optimized Cityworks AMS workflows—API-integrated service request creation, inspections, and fieldwork coordination.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Integrated RESTful services with Postman—bridging asset systems, Siebel 311, ArcGIS Feature Services, and internal databases.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Delivered ArcGIS Experience Builder, ArcGIS Pro, and ArcMap solutions for advanced analysis, visualization, and field decision-making.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Designed, built, and maintained enterprise geodatabases—ensuring data integrity, schema consistency, and operational readiness.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Developed modular, scalable C#/.NET backends with async operations and structured controller logic for performance.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Ran geospatial analysis and QA/QC using SQL and Python—supporting real-time decisions and operational efficiency.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Produced technical documentation, workflow diagrams, and user guides for delivery and long-term maintenance.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Created reports and presentations for stakeholders—driving transparency, compliance, and clear communication.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Worked in Agile/Scrum—sprint planning, daily stand-ups, and iterative delivery aligned with ASD practices.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Delivered under a Time &amp; Materials model—prioritizing flexibility, collaboration, and continuous value.</span>
+                  </div>
+                
+                  <div class="list-item mb8">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Succeeded both independently and in remote cross-functional teams.</span>
+                  </div>
+                
+                  <div class="list-item">
+                    <svg width="16" height="16"><use href="#i-award"/></svg>
+                    <span class="text-muted">Contributed to training, process improvements, and knowledge sharing to upskill peers and support onboarding.</span>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section block-dark">
+    <div class="container center">
+      <h2 class="h2" style="color:#fff">Let's Build Something Amazing Together</h2>
+      <p class="lead text-white-70 mb24">I’m a full-stack .NET developer with a strong GIS background, building useful tools at the intersection of code and geography.</p>
+      <div class="flex gap12 justify-center" style="flex-wrap:wrap">
+        <a href="mailto:suad.arzimanli@gmail.com" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-mail"/></svg> Send me an Email</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="flex items-center justify-center gap12 mb12">
+      <div class="round-lg flex items-center justify-center" style="width:32px;height:32px;background:linear-gradient(135deg,#10b981,#2563eb)">
+        <svg width="16" height="16" style="color:#fff"><use href="#i-map-pin"/></svg>
+      </div>
+      <strong>Suad Arzimanlı</strong>
+    </div>
+    <div class="text-white-70">© 2025 Portfolio. Built with precision and passion.</div>
+  </div>
+</footer>
+
+</body>
+</html>

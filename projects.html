@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projects • GIS Developer</title>
+<link rel="stylesheet" href="styles.css"/>
+<script defer src="main.js"></script>
+
+<!-- ICON SPRITE -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
+  <symbol id="i-barchart" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="12" y="6" width="3" height="11"/><rect x="17" y="13" width="3" height="4"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3" stroke-width="2"/><path stroke-width="2" d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M17 11a4 4 0 10-3-7M2 21a7 7 0 0114 0M15 21a6 6 0 1112 0"/></symbol>
+</svg>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true"
+        style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+    
+      <!-- NEW: compact brand for phones -->
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu">
+      <svg width="22" height="22"><use href="#i-folder"/></svg>
+    </button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-map-pin"/></svg> Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-code"/></svg> Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-folder"/></svg> Projects</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-user"/></svg> About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer><svg width="18" height="18"><use href="#i-github"/></svg> GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="section-tight">
+    <div class="container center">
+      <h1 class="h1 text-grad-slate">Featured Projects</h1>
+      <p class="lead mb32">Some personal project examples i worked on and implemented.</p>
+
+      <!-- Category Filter -->
+      <div class="flex gap8 justify-center" style="flex-wrap:wrap" data-filter-wrap>
+        <button class="btn btn-primary" data-category="All">All</button>
+        <button class="btn btn-outline" data-category="Enterprise GIS">Enterprise GIS</button>
+        <button class="btn btn-outline" data-category="Asset Management">Asset Management</button>
+        <button class="btn btn-outline" data-category="Web Development">Web Development</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <!-- Project 1 -->
+        <article class="card project-card" data-project-card data-category="Enterprise GIS">
+          <div class="image-wrap">
+            <img src="crisis/crisis-cover.png" alt="Ticket Application Supportdesk"/>
+            <div class="image-grad" aria-hidden="true"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Enterprise GIS</div>
+            <div class="metric">
+              <svg width="18" height="18"><use href="#i-barchart"/></svg>
+              <div>
+                <div style="font-weight:800">GIS based 
+                  Forecasting Application</div>
+                <div style="font-size:12px;opacity:.9">Forecast Horizon</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div class="h3">Crisis Zones Forecast Dashboard</div>
+            <p class="text-muted">
+              GIS-GEOINT web app that maps historical ACLED events for Poland and surfaces 3-month forecasts via an interactive map,
+              filters, a forecast panel, and live charts. Built with ASP.NET Core MVC and Google Maps.
+            </p>
+          
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">ASP.NET Core MVC</span>
+              <span class="badge badge-white">C#</span>
+              <span class="badge badge-white">Google Maps API</span>
+              <span class="badge badge-white">Chart.js</span>
+              <span class="badge badge-white">GeoJSON</span>
+              <span class="badge badge-white">ArcGIS Pro</span>
+              <span class="badge badge-white">REST APIs</span>
+              <span class="badge badge-white">Postman</span>
+              <span class="badge badge-white">JSON</span>
+            </div>
+          
+            <div class="mb16">
+              <strong>Key Features</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>Conflict map: loads ACLED Poland data (GeoJSON), clusters markers, and shows InfoWindows (event/sub-event, date, city, notes).</li>
+                <li>Forecast panel: reads <code>poland_enhanced_forecasts.json</code>, highlighting expected events/fatalities, likely protest types, and regional breakdowns.</li>
+                <li>Interactive filters: event type, sub-event type, city, year — updates map and charts in real time.</li>
+                <li>Data insights: Chart.js bar (events by type), line (fatalities over time), pie (events by city).</li>
+              </ul>
+            </div>
+          
+            <div class="flex gap8">
+              <a href="project-crisis-forecast.html" class="btn btn-primary flex-1">
+                <svg width="16" height="16"><use href="#i-external"/></svg> View Demo
+              </a>
+              <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg width="16" height="16"><use href="#i-github"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card project-card" data-project-card data-category="Web Development">
+          <div class="image-wrap">
+            <img src="assets/supportdesk-cover.png" alt="Ticket Application Supportdesk"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Web Development</div>
+            <div class="metric">
+              <svg width="18" height="18"><use href="#i-barchart"/></svg>
+              <div>
+                <div style="font-weight:800">Helpdesk</div>
+                <div style="font-size:12px;opacity:.9">Tickets & Dashboard</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div class="h3">Ticket Application Supportdesk</div>
+            <p class="text-muted">
+              ASP.NET MVC helpdesk to create, track, filter, and resolve tickets—dashboard, comments, and CSV export.
+            </p>
+          
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">ASP.NET Core MVC</span>
+              <span class="badge badge-white">Razor &amp; Tag Helpers</span>
+              <span class="badge badge-white">ViewComponents</span>
+              <span class="badge badge-white">ADO.NET</span>
+              <span class="badge badge-white">SQL Server</span>
+              <span class="badge badge-white">DI &amp; Config</span>
+              <span class="badge badge-white">Data Annotations</span>
+              <span class="badge badge-white">Anti-forgery</span>
+              <span class="badge badge-white">CSV Export</span>
+            </div>
+          
+            <div class="mb16">
+              <strong>Key Features</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>Ticket CRUD with status/priority/category/assignee/tags/dates</li>
+                <li>Comments with public vs internal notes</li>
+                <li>Dashboard: Open/In-Progress/Resolved/Urgent + Recent list</li>
+                <li>Server-side search, filters, sorting & pagination</li>
+                <li>CSV export of current view</li>
+              </ul>
+            </div>
+          
+            <div class="flex gap8">
+              <a class="btn btn-primary flex-1" href="project-supportdesk.html" rel="noopener">
+                <svg width="16" height="16"><use href="#i-external"/></svg> View Demo
+              </a>
+              <a class="btn btn-outline" href="https://github.com/suadarzimanli" target="_blank" rel="noopener" aria-label="Open GitHub">
+                <svg width="16" height="16"><use href="#i-github"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" data-project-card data-category="Asset Management">
+          <div class="image-wrap">
+            <img src="tree/arborist-cover.png" alt="Arborist Tree Management Application"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Asset Management</div>
+            <div class="metric">
+              <svg width="18" height="18"><use href="#i-map-pin"/></svg>
+              <div>
+                <div style="font-weight:800">Arborist</div>
+                <div style="font-size:12px;opacity:.9">Trees & Workflows</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div class="h3">Arborist Tree Management Application</div>
+            <p class="text-muted">
+              ASP.NET Core MVC app to manage tree inventories, inspections, and maintenance.
+            </p>
+          
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">.NET 8 / ASP.NET Core MVC (C#)</span>
+              <span class="badge badge-white">JavaScript</span>
+              <span class="badge badge-white">Razor ViewModels/POCOs</span>
+              <span class="badge badge-white">Bootstrap 5</span>
+              <span class="badge badge-white">Bootstrap Icons</span>
+            </div>
+          
+            <div class="mb16">
+              <strong>Key Features</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>Tree inventory</li>
+                <li>Inspection forms with risk rating and maintenance recommendations</li>
+                <li>Map filters by species, condition, status; clustering & search</li>
+              </ul>
+            </div>
+          
+            <div class="flex gap8">
+              <a class="btn btn-primary flex-1" href="project-arborist.html" rel="noopener">
+                <svg width="16" height="16"><use href="#i-external"/></svg> View Demo
+              </a>
+              <a class="btn btn-outline" href="https://github.com/suadarzimanli" target="_blank" rel="noopener" aria-label="Open GitHub">
+                <svg width="16" height="16"><use href="#i-github"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <!-- Battleship Assistant -->
+        <article class="card project-card" data-project-card data-category="Desktop App">
+          <div class="image-wrap">
+            <img src="battleship/battleship-cover.png" alt="Battleship Assistant — Windows Forms game"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Desktop App</div>
+            <div class="metric">
+              <svg width="18" height="18"><use href="#i-zap"/></svg>
+              <div>
+                <div style="font-weight:800">Game</div>
+                <div style="font-size:12px;opacity:.9">Windows Forms</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div class="h3">Battleship Assistant</div>
+            <p class="text-muted">
+              C# Windows Forms Battleship with registration &amp; login, a computer bot opponent, and SQL Server–backed user storage.
+            </p>
+          
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">C#</span>
+              <span class="badge badge-white">Windows Forms</span>
+              <span class="badge badge-white">SQL Server</span>
+              <span class="badge badge-white">ADO.NET</span>
+              <span class="badge badge-white">Auth (Login/Register)</span>
+              <span class="badge badge-white">Game Logic / RNG</span>
+            </div>
+          
+            <div class="mb16">
+              <strong>Key Features</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>User registration &amp; secure login (SQL Server)</li>
+                <li>Play vs a computer-controlled bot</li>
+                <li>Randomized bot ship placement</li>
+                <li>Randomized bot shooting strategy</li>
+                <li>Persistent user data via ADO.NET</li>
+              </ul>
+            </div>
+          
+            <div class="flex gap8">
+              <a class="btn btn-primary flex-1" href="project-battleship.html" rel="noopener">
+                <svg width="16" height="16"><use href="#i-external"/></svg> View Demo
+              </a>
+              <a class="btn btn-outline" href="https://github.com/suadarzimanli" target="_blank" rel="noopener" aria-label="Open GitHub">
+                <svg width="16" height="16"><use href="#i-github"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" data-project-card data-category="Soon">
+          <div class="image-wrap">          
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Soon</div>
+            <div class="metric">
+              <svg width="18" height="18"><use href="#i-map-pin"/></svg>
+              <div>
+                <div style="font-weight:800">Soon</div>
+                <div style="font-size:12px;opacity:.9"></div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div class="h3">Soon :)</div>
+            <p class="text-muted">
+
+            </p>
+            </div>
+          
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CTA -->
+      <section class="card center" style="margin-top:60px;background:linear-gradient(90deg,#0f172a,#111827);color:#fff">
+        <div class="card-body">
+          <h2 class="h2">Interested in My Work?</h2>
+          <p class="lead text-white-70 mb24">Please contact with me.</p>
+          <div class="flex gap12 justify-center" style="flex-wrap:wrap">
+            <a class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-map-pin"/></svg> Let's Connect</a>
+            <a class="btn btn-outline btn-lg" target="_blank" rel="noopener"><svg width="18" height="18"><use href="#i-github"/></svg> View More Projects</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="flex items-center justify-center gap12 mb12">
+      <div class="round-lg flex items-center justify-center" style="width:32px;height:32px;background:linear-gradient(135deg,#10b981,#2563eb)">
+        <svg width="16" height="16" style="color:#fff"><use href="#i-map-pin"/></svg>
+      </div>
+      <strong>Suad Arzimanlı</strong>
+    </div>
+    <div class="text-white-70">© 2025 Portfolio. Built with precision and passion.</div>
+  </div>
+</footer>
+
+</body>
+</html>

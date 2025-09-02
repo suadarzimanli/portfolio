@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Suad Arzimanlı — Skills (.NET/C# & GIS)</title>
+<link rel="stylesheet" href="styles.css"/>
+<script defer src="main.js"></script>
+
+<!-- ICON SPRITE (same as index for portability) -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M5 3l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4zM19 11l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="6" rx="2" stroke-width="2"/><rect x="3" y="14" width="18" height="6" rx="2" stroke-width="2"/><circle cx="8" cy="7" r="1"/><circle cx="8" cy="17" r="1"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3" stroke-width="2"/><path stroke-width="2" d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></symbol>
+  <symbol id="i-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke-width="2"/><rect x="15" y="3" width="6" height="6" rx="1.5" stroke-width="2"/><rect x="9" y="15" width="6" height="6" rx="1.5" stroke-width="2"/><path stroke-width="2" d="M6 9v6h6M18 9v6h-6"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M8 6a3 3 0 10-3 3H4a4 4 0 100 8h1a3 3 0 106 0M16 6a3 3 0 113-3h1a4 4 0 110 8h-1a3 3 0 10-6 0"/></symbol>
+    <!-- Award / medal -->
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M9 12.5L8 21l4-2 4 2-1-8.5" stroke-width="2"/></symbol>
+  
+  <!-- Certificate / badge on document -->
+  <symbol id="i-certificate" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2"/><path d="M7 9h7M7 13h6" stroke-width="2"/><circle cx="17" cy="11" r="2" stroke-width="2"/><path d="M17 13v4l2-1 2 1v-4" stroke-width="2"/></symbol>
+
+</svg>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+       <span class="round-lg flex items-center justify-center" aria-hidden="true"
+        style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+
+      <!-- NEW: compact brand for phones -->
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu">
+      <svg width="22" height="22"><use href="#i-code"/></svg>
+    </button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-map-pin"/></svg> Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-code"/></svg> Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-folder"/></svg> Projects</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-user"/></svg> About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer><svg width="18" height="18"><use href="#i-github"/></svg> GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="section-tight">
+    <div class="container center">
+      <h1 class="h1 text-grad-slate">Technical Skills & Expertise</h1>
+      <p class="lead mb32">A brief overview of my skills.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Skills Grid -->
+      <div class="grid-2 mb60">
+        <!-- Category: Programming -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#3b82f6,#2563eb)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-code"/></svg>
+              </div>
+              <strong>Programming & Development</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>C# / .NET (MVC &amp; Windows Forms)</strong></span></div>
+              <div class="text-muted">Automating enterprise workflows & building full-stack apps for infrastructure services</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>JavaScript, HTML5, CSS3</strong></span></div>
+              <div class="text-muted">Dynamic, responsive interfaces with geospatial UI patterns</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Python Scripting</strong></span></div>
+              <div class="text-muted">Geospatial processing, task automation, and QA/QC</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>SQL</strong></span></div>
+              <div class="text-muted">Spatial & non-spatial queries; supports asset DBs and geodatabase integrity</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: Frameworks & Technologies -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#059669,#047857)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-server"/></svg>
+              </div>
+              <strong>Frameworks & Technologies</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>ASP.NET Core MVC (.NET 6/7/8)</strong></span></div>
+              <div class="text-muted">Scalable web application architecture</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>ASP.NET Core Web API</strong></span></div>
+              <div class="text-muted">Clean REST endpoints and integrations</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Entity Framework Core</strong></span></div>
+              <div class="text-muted">Data access patterns and performance</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Windows Forms</strong></span></div>
+              <div class="text-muted">Desktop GIS application development</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: GIS & Geospatial -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#8b5cf6,#6366f1)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-map-pin"/></svg>
+              </div>
+              <strong>GIS & Geospatial</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>ArcGIS Pro / ArcMap / ArcGIS Online</strong></span></div>
+              <div class="text-muted">Map authoring, spatial analysis, visualization, layer management</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>ArcGIS Experience Builder</strong></span></div>
+              <div class="text-muted">Custom widgets & map-driven web apps</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Google Maps API</strong></span></div>
+              <div class="text-muted">Markers, clustering, geofencing, polygons, Place Search</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>ESRI Systems</strong></span></div>
+              <div class="text-muted">Formats, projections, enterprise deployments</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: Infrastructure & Data -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#f59e0b,#f97316)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-database"/></svg>
+              </div>
+              <strong>Infrastructure & Data</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>SQL Server</strong></span></div>
+              <div class="text-muted">Administration, optimization, reliability</div>
+            </div>          
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Enterprise Geodatabase</strong></span></div>
+              <div class="text-muted">Multi-user spatial data management</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Geodatabase Architecture &amp; Management</strong></span></div>
+              <div class="text-muted">Modeling, validation, structure optimization</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: Asset Management & Workflow Automation -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#10b981,#059669)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-workflow"/></svg>
+              </div>
+              <strong>Asset Management &amp; Workflow Automation</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Cityworks AMS</strong></span></div>
+              <div class="text-muted">Workflows for DOT/Highway, Tree Management, 311/Pothole</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Tree Management &amp; 311 Systems</strong></span></div>
+              <div class="text-muted">Inspections, planting, service request tracking</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Infrastructure Workflow Programming</strong></span></div>
+              <div class="text-muted">Backend automation + frontend integration</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: API & System Integration -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#2563eb,#1d4ed8)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-code"/></svg>
+              </div>
+              <strong>API &amp; System Integration</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Postman / REST API</strong></span></div>
+              <div class="text-muted">Custom endpoints, testing, JSON data flow</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Siebel Integration (311)</strong></span></div>
+              <div class="text-muted">Linking SRs and asset data with middleware</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Service-Oriented Architecture</strong></span></div>
+              <div class="text-muted">Modular services across infrastructure platforms</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: Data Analysis & Quality Control -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#9333ea,#7c3aed)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-brain"/></svg>
+              </div>
+              <strong>Data Analysis &amp; Quality Control</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Geospatial Data Analysis</strong></span></div>
+              <div class="text-muted">Spatial queries, clustering, buffers, map-based reporting</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Data Quality &amp; Validation</strong></span></div>
+              <div class="text-muted">High accuracy for public assets, field data, sync</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Visualization &amp; Reporting</strong></span></div>
+              <div class="text-muted">Real-time insights on asset status and service coverage</div>
+            </div>
+          </div>
+        </article>
+      
+        <!-- Category: System Design & Application Structure -->
+        <article class="card">
+          <div class="card-body">
+            <div class="flex items-center gap12 mb20">
+              <div class="round-lg flex items-center justify-center" style="width:44px;height:44px;background:linear-gradient(90deg,#0ea5e9,#0284c7)">
+                <svg width="22" height="22" style="color:#fff"><use href="#i-server"/></svg>
+              </div>
+              <strong>System Design &amp; Application Structure</strong>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Modular Architecture</strong></span></div>
+              <div class="text-muted">Reusable modules for scalability & maintainability</div>
+            </div>
+          
+            <div class="mb20">
+              <div class="flex items-center justify-between mb8"><span><strong>Event-Driven Logic</strong></span></div>
+              <div class="text-muted">Interfaces reacting to user, map, and system events</div>
+            </div>
+          
+            <div>
+              <div class="flex items-center justify-between mb8"><span><strong>Full-Cycle Development</strong></span></div>
+              <div class="text-muted">UI/UX → backend → database → deployment</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Core Competencies -->
+      <section class="card mb60" style="background:linear-gradient(90deg,#0f172a,#111827);color:#fff">
+        <div class="card-body center">
+          <h2 class="h2">Core Competencies</h2>
+          <p class="lead text-white-70 mb24">Key areas I am interested in</p>
+          
+          <div class="grid-4">
+            <div class="center">
+              <div class="round-lg flex items-center justify-center mb12" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+                <svg width="28" height="28" style="color:#fff"><use href="#i-code"/></svg>
+              </div>
+              <div>.NET/C# & API Development</div>
+            </div>
+          
+            <div class="center">
+              <div class="round-lg flex items-center justify-center mb12" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+                <svg width="28" height="28" style="color:#fff"><use href="#i-database"/></svg>
+              </div>
+              <div>SQL & Geodatabase Architecture</div>
+            </div>
+          
+            <div class="center">
+              <div class="round-lg flex items-center justify-center mb12" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+                <svg width="28" height="28" style="color:#fff"><use href="#i-globe"/></svg>
+              </div>
+              <div>Enterprise GIS Solutions</div>
+            </div>
+          
+            <div class="center">
+              <div class="round-lg flex items-center justify-center mb12" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+                <svg width="28" height="28" style="color:#fff"><use href="#i-workflow"/></svg>
+              </div>
+              <div>Workflow Automation (311 & Field)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="center">
+        <h2 class="h2">Certifications & Recognition</h2>
+        <p class="lead mb32">Certifications and Courses i have completed</p>
+
+        <div class="grid-custom">
+
+          <article class="card center">
+            <div class="card-body">
+              <div class="round-lg flex items-center justify-center mb16" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)"><svg width="28" height="28" style="color:#fff"><use href="#i-award"/></svg></div>
+              <div class="h3">Management and Strategy Institue Project Management Essential Certified (PMEC)</div>
+            </div>
+          </article>
+
+          <article class="card center">
+            <div class="card-body">
+              <div class="round-lg flex items-center justify-center mb16"style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)"><svg width="28" height="28" style="color:#fff"><use href="#i-certificate"/></svg></div>
+              <div class="h3">Southern New Hampshire University IT242 Course</div>
+            </div>
+          </article>       
+          
+          <article class="card center">
+            <div class="card-body">
+              <div class="round-lg flex items-center justify-center mb16" style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)"><svg width="28" height="28" style="color:#fff"><use href="#i-award"/></svg></div>
+              <div class="h3">Oxford Home Study Centre Project Management</div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="flex items-center justify-center gap12 mb12">
+      <div class="round-lg flex items-center justify-center" style="width:32px;height:32px;background:linear-gradient(135deg,#10b981,#2563eb)">
+        <svg width="16" height="16" style="color:#fff"><use href="#i-map-pin"/></svg>
+      </div>
+      <strong>Suad Arzimanlı</strong>
+    </div>
+    <div class="text-white-70">© 2025 Portfolio. Built with precision and passion.</div>
+  </div>
+</footer>
+
+</body>
+</html>

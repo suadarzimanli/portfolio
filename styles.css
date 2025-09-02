@@ -1,0 +1,223 @@
+/* ====== Base / Theme ====== */
+:root{
+  --slate-900:#0f172a; --slate-800:#1e293b; --slate-700:#334155; --slate-600:#475569; --slate-500:#64748b; --slate-400:#94a3b8; --slate-300:#cbd5e1; --slate-200:#e2e8f0; --slate-100:#f1f5f9; --white:#ffffff;
+  --emerald-50:#ecfdf5; --emerald-200:#a7f3d0; --emerald-500:#10b981; --emerald-600:#059669; --emerald-700:#047857;
+  --blue-50:#eff6ff; --blue-500:#3b82f6; --blue-600:#2563eb;
+  --indigo-50:#eef2ff;
+  --purple-500:#8b5cf6; --orange-500:#f97316;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:0 6px 20px rgba(0,0,0,.10);
+  --shadow-lg:0 12px 30px rgba(2,6,23,.16);
+  --radius-xl:20px; --radius-lg:16px; --radius-md:12px; --radius:10px; --radius-sm:8px;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; color:var(--slate-800); background:
+  linear-gradient(135deg, var(--slate-100), var(--blue-50) 40%, #e9edff 100%);
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+
+/* Containers */
+.container{max-width:1200px;margin-inline:auto;padding:0 1.25rem}
+.section{padding:80px 0}
+.section-tight{padding:60px 0}
+.section-tight2{ padding: 60px 0; max-height: 240px; }
+
+/* Headings */
+.h1{font-size:clamp(32px,4vw,56px);line-height:1.05;margin:0 0 12px;font-weight:800}
+.h2{font-size:clamp(28px,3vw,40px);margin:0 0 10px;font-weight:800}
+.h3{font-size:22px;margin:0 0 8px;font-weight:800}
+.lead{font-size:20px;color:var(--slate-600)}
+
+/* Text gradients */
+.text-grad-slate{
+  background:linear-gradient(90deg,#0b1220, #475569, #64748b);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.text-grad-emerald{
+  background:linear-gradient(90deg,#059669, #10b981, #2563eb);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .7rem;border-radius:999px;font:600 13px/1.2 inherit}
+.badge-emerald{background:#ecfdf5;color:#047857;border:1px solid #bbf7d0}
+.badge-outline{background:#ffffffcc;border:1px solid var(--slate-300);color:var(--slate-700)}
+.badge-white{background:#fff;border:1px solid var(--slate-200);color:var(--slate-700)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.8rem 1.1rem;border-radius:12px;border:1px solid transparent;cursor:pointer;text-decoration:none;font-weight:700;transition:.25s box-shadow,.25s transform,.25s background,.25s color}
+.btn-lg{padding:.95rem 1.25rem;font-size:16px}
+.btn-primary{color:#fff;background:linear-gradient(90deg,#059669,#047857);box-shadow:var(--shadow-md)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg);background:linear-gradient(90deg,#047857,#065f46)}
+.btn-outline{background:#fff;color:var(--slate-800);border-color:var(--slate-300)}
+.btn-outline:hover{background:#f8fafc}
+.btn-ghost{background:transparent;color:var(--slate-800)}
+.btn-icon{width:42px;height:42px;padding:0;border-radius:12px}
+
+/* Cards */
+.card{background:#ffffffcc;backdrop-filter:blur(6px);border:1px solid #e5e7eb;border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .35s, box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.card-body{padding:28px}
+
+/* Progress */
+.progress{width:100%;height:10px;border-radius:999px;background:#e5e7eb;overflow:hidden}
+.progress > span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#3b82f6,#2563eb)}
+
+/* Header / Nav */
+.site-header{position:sticky;top:0;z-index:30;background:#ffffffcc;backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.1)}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{position:relative;padding:.55rem .9rem;border-radius:12px;font-weight:600;color:var(--slate-600);text-decoration:none;display:flex;gap:.5rem;align-items:center}
+.nav a:hover{background:#10b98115;color:#047857}
+.nav a.active{background:#ecfdf5;color:#047857}
+.nav a.active::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:26px;height:3px;border-radius:999px;background:linear-gradient(90deg,#10b981,#2563eb)}
+
+/* Brand link — remove underline */
+.site-header a[data-nav]{ text-decoration:none; color:inherit; }
+.site-header a[data-nav]:hover,
+.site-header a[data-nav]:focus,
+.site-header a[data-nav]:active,
+.site-header a[data-nav]:visited{ text-decoration:none; color:inherit; }
+.site-header a[data-nav] *{ text-decoration:none; }
+
+/* Mobile drawer */
+.only-mobile{display:none}
+@media (max-width: 768px){
+  .only-desktop{display:none}
+  .only-mobile{display:inline-flex}
+}
+.drawer{position:fixed;inset:0 0 0 auto;width:320px;background:#fffffff2;backdrop-filter:blur(14px);transform:translateX(110%);transition:transform .3s ease;box-shadow:-10px 0 30px rgba(2,6,23,.18);padding:80px 20px;z-index:40}
+.drawer.open{transform:translateX(0)}
+.drawer .drawer-link{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;border-radius:14px;color:var(--slate-700);font-weight:600;text-decoration:none}
+.drawer .drawer-link:hover{background:#10b98115;color:#047857}
+
+/* Footer */
+.site-footer{background:var(--slate-900);color:#fff;padding:40px 0;margin-top:80px}
+
+/* Hero specific */
+.hero{position:relative;padding:100px 0}
+.pattern{position:absolute;inset:0;opacity:.08;pointer-events:none}
+.kaleido{position:relative;width:min(420px,90vw);aspect-ratio:1;margin-inline:auto}
+.spin-slow{animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Grids */
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.grid-custom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width: 1024px){.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media (max-width: 768px){.grid-2,.grid-3,.grid-custom,.grid-4{grid-template-columns:1fr}}
+
+/* Utilities */
+.center{text-align:center}
+.m0{margin:0}.mb4{margin-bottom:4px}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}.mb20{margin-bottom:20px}.mb24{margin-bottom:24px}.mb28{margin-bottom:28px}.mb32{margin-bottom:32px}.mb40{margin-bottom:40px}.mb48{margin-bottom:48px}.mb60{margin-bottom:60px}.mb80{margin-bottom:80px}
+.flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}.gap6{gap:6px}.gap8{gap:8px}.gap12{gap:12px}.gap16{gap:16px}.gap20{gap:20px}.gap24{gap:24px}
+.round-xl{border-radius:var(--radius-xl)}.round-lg{border-radius:var(--radius-lg)}
+.shadow-2xl{box-shadow:var(--shadow-lg)}
+.text-muted{color:var(--slate-600)}
+.text-white-70{color:rgba(255,255,255,.75)}
+.text-white-80{color:rgba(255,255,255,.85)}  /* added */
+
+/* CTA dark block */
+.block-dark{background:linear-gradient(90deg,#0f172a,#111827)}
+.block-dark .btn-outline{border-color:#475569;color:#fff}
+.block-dark .btn-outline:hover{background:#fff;color:#0f172a}
+
+/* Project cards */
+.project-card .image-wrap{position:relative;height:200px;overflow:hidden}
+.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.project-card:hover img{transform:scale(1.08)}
+.project-card .image-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 40%, rgba(0,0,0,.55))}
+.project-card .metric{position:absolute;right:14px;bottom:12px;color:#fff;display:flex;gap:10px;align-items:center}
+
+/* Timeline */
+.timeline{position:relative}
+.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(#10b981,#2563eb);display:none}
+@media (min-width:1024px){.timeline{padding-left:32px}.timeline::before{display:block}}
+.timeline-item{display:flex;gap:20px;align-items:flex-start}
+.timeline-dot{display:none}
+@media (min-width:1024px){.timeline-dot{display:flex;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#10b981,#2563eb);align-items:center;justify-content:center;flex:0 0 auto}}
+
+.hidden{display:none !important}
+
+/* Normalize the award icon + text rows */
+.list-item{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  font-size:14px;
+  line-height:1.5;
+}
+.list-item svg{
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+  margin-top:2px;
+}
+
+/* Make thumbs feel clickable */
+.ss-card img{cursor:zoom-in}
+
+/* Lightbox base */
+.lightbox{
+  position:fixed; inset:0; z-index:1000;
+  display:none; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.85);
+}
+.lightbox.open{display:flex}
+
+/* Stage */
+.lb-stage{
+  position:relative; max-width:92vw; max-height:88vh;
+  display:flex; align-items:center; justify-content:center;
+}
+.lb-img{
+  max-width:92vw; max-height:82vh; border-radius:12px;
+  box-shadow:0 24px 60px rgba(0,0,0,.6); background:#111;
+}
+
+/* Caption */
+.lb-caption{
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-44px; color:#e5e7eb; text-align:center;
+  font-size:14px; line-height:1.3; max-width:80vw;
+}
+
+/* Controls */
+.lb-btn, .lb-close{
+  position:absolute; display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:10px; border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08); color:#fff;
+  cursor:pointer; user-select:none;
+  transition:transform .15s ease, background .15s ease;
+}
+.lb-btn:hover, .lb-close:hover{background:rgba(255,255,255,.16); transform:scale(1.05)}
+.lb-prev{left:-56px}
+.lb-next{right:-56px}
+.lb-close{top:-56px; right:-56px}
+
+/* Responsive nudge for tight screens */
+@media (max-width:640px){
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+  .lb-close{top:8px; right:8px}
+  .lb-caption{bottom:-36px; font-size:13px}
+}
+
+/* Compact brand for mobile */
+.brand-mobile{ /* no display here; .only-mobile controls visibility */
+  flex-direction:column;
+  line-height:1.1;
+}
+.brand-title{font-weight:800;font-size:14px;white-space:nowrap}
+.brand-sub{font-size:11px;color:var(--slate-500);margin-top:2px}
+
+/* Prevent overflow on very narrow phones */
+@media (max-width:360px){
+  .brand-title{max-width:150px;overflow:hidden;text-overflow:ellipsis}
+}

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Suad Arzimanlı — .NET/C# & GIS Developer</title>
+<link rel="stylesheet" href="styles.css"/>
+<script defer src="main.js"></script>
+
+<!-- SVG ICON SPRITE -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M5 3l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4zM19 11l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l10 6-10 6L2 9l10-6z"/><path stroke-width="2" d="M2 15l10 6 10-6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path stroke-width="2" d="M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3" stroke-width="2"/><path stroke-width="2" d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></symbol>
+  <!-- Award / medal -->
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M9 12.5L8 21l4-2 4 2-1-8.5" stroke-width="2"/></symbol>
+  
+  <!-- Certificate / badge on document -->
+  <symbol id="i-certificate" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2"/><path d="M7 9h7M7 13h6" stroke-width="2"/><circle cx="17" cy="11" r="2" stroke-width="2"/><path d="M17 13v4l2-1 2 1v-4" stroke-width="2"/></symbol>
+
+</svg>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true"
+            style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+    
+      <!-- NEW: compact brand for phones -->
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+
+
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu">
+      <svg width="22" height="22"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-map-pin"/></svg> Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-code"/></svg> Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-folder"/></svg> Projects</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav><svg width="18" height="18"><use href="#i-user"/></svg> About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer><svg width="18" height="18"><use href="#i-github"/></svg> GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10b981" stroke-width="1"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:64px">
+        <div>
+          <span class="badge badge-emerald mb16">
+            <svg width="16" height="16"><use href="#i-sparkles"/></svg> Full-Stack .NET • GIS Developer
+          </span>
+          <h1 class="h1">
+            <span class="text-grad-slate">Building</span><br/>
+            <span class="text-grad-emerald">.NET/C# + GIS</span><br/>
+            <span class="text-grad-slate">Solutions</span>
+          </h1>
+          <p class="lead mb20">
+            Welcome, I'm Suad Arzimanlı. This is my portfolio: a simple place to browse selected work, see what I’m building, and how I think about problems. If you want more detail, the About and Projects pages have the full story. If something clicks, feel free to reach out. 
+          </p>
+
+          <div class="flex gap12" style="flex-wrap:wrap">
+            <a href="projects.html" class="btn btn-primary btn-lg">
+              View My Work <svg width="18" height="18"><use href="#i-chevron-right"/></svg>
+            </a>
+            <a href="Suad_Arzimanli_Resume_CV.pdf" class="btn btn-outline btn-lg" download>
+              <svg width="18" height="18"><use href="#i-download"/></svg> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="kaleido">
+            <!-- spinning dots -->
+            <div class="spin-slow" style="position:absolute;inset:0">
+              <span style="position:absolute;top:0;left:50%;transform:translate(-50%,0);width:16px;height:16px;background:#10b981;border-radius:999px;box-shadow:0 6px 18px rgba(16,185,129,.5)"></span>
+              <span style="position:absolute;bottom:0;left:50%;transform:translate(-50%,0);width:12px;height:12px;background:#2563eb;border-radius:999px;box-shadow:0 6px 18px rgba(37,99,235,.5)"></span>
+              <span style="position:absolute;left:0;top:50%;transform:translate(0,-50%);width:12px;height:12px;background:#8b5cf6;border-radius:999px;box-shadow:0 6px 18px rgba(139,92,246,.5)"></span>
+              <span style="position:absolute;right:0;top:50%;transform:translate(0,-50%);width:16px;height:16px;background:#f97316;border-radius:999px;box-shadow:0 6px 18px rgba(249,115,22,.5)"></span>
+            </div>
+            <!-- center globe -->
+            <div class="flex items-center justify-center" style="position:absolute;inset:0">
+              <div class="round-xl shadow-2xl" style="width:128px;height:128px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#10b981,#2563eb,#8b5cf6)">
+                <svg width="64" height="64" style="color:#fff"><use href="#i-globe"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section" style="background:#ffffff99;backdrop-filter:blur(4px)">
+    <div class="container">
+      <div class="center mb32">
+        <h2 class="h2">Expertise Highlights</h2>
+        <p class="lead">Delivering robust geospatial solutions with deep technical expertise and innovative problem-solving approaches.</p>
+      </div>
+
+      <div class="grid-3">
+      <!-- .NET / C# -->
+      <article class="card center">
+        <div class="card-body">
+          <div class="round-lg flex items-center justify-center mb16"
+               style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+            <svg width="28" height="28" style="color:#fff"><use href="#i-code"/></svg>
+          </div>
+          <h3 class="h3">.NET / C# Development</h3>
+          <p class="text-muted">C#, ASP.NET Core MVC (.NET 6/7/8), ASP.NET Core Web API, Entity Framework.</p>
+        </div>
+      </article>
+    
+      <!-- SQL / Database / Geodatabase -->
+      <article class="card center">
+        <div class="card-body">
+          <div class="round-lg flex items-center justify-center mb16"
+               style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+            <svg width="28" height="28" style="color:#fff"><use href="#i-database"/></svg>
+          </div>
+          <h3 class="h3">SQL & Geodatabase Architecture</h3>
+          <p class="text-muted">SQL Server, Data Modeling & Manipulation, MYSQL, indexing & QA/QC.</p>
+        </div>
+      </article>
+    
+      <!-- Enterprise GIS -->
+      <article class="card center">
+        <div class="card-body">
+          <div class="round-lg flex items-center justify-center mb16"
+               style="width:64px;height:64px;margin-inline:auto;background:linear-gradient(135deg,#10b981,#2563eb)">
+            <svg width="28" height="28" style="color:#fff"><use href="#i-layers"/></svg>
+          </div>
+          <h3 class="h3">Enterprise GIS Solutions</h3>
+          <p class="text-muted">ArcGIS (ArcGIS Pro, ArcMap, ArcGIS Experience Builder, Google Maps API), Cityworks, map-driven apps.</p>
+        </div>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section block-dark">
+    <div class="container center">
+      <h2 class="h2" style="color:#fff">Let's Build Something Amazing Together.</h2>
+      <p class="lead text-white-70 mb24">I’m a full-stack .NET developer with a strong GIS background, building useful tools at the intersection of code and geography.</p>
+      <div class="flex gap12 justify-center" style="flex-wrap:wrap">
+        <a href="about.html" class="btn btn-primary btn-lg">Get In Touch <svg width="18" height="18"><use href="#i-external"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="flex items-center justify-center gap12 mb12">
+      <div class="round-lg flex items-center justify-center" style="width:32px;height:32px;background:linear-gradient(135deg,#10b981,#2563eb)">
+        <svg width="16" height="16" style="color:#fff"><use href="#i-map-pin"/></svg>
+      </div>
+      <strong>Suad Arzimanlı</strong>
+    </div>
+    <div class="text-white-70">© 2025 Portfolio. Built with precision and passion.</div>
+  </div>
+</footer>
+
+</body>
+</html>

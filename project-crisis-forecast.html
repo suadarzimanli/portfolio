@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crisis Zones Forecast Dashboard • Demo</title>
+<link rel="stylesheet" href="styles.css"/>
+<script defer src="main.js"></script>
+
+<!-- Minimal icon sprite for this page -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/>
+    <circle cx="12" cy="10.5" r="3" stroke-width="2"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+    <path stroke-width="2" d="M15 3h6v6M10 14L21 3"/>
+  </symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-width="2" d="M15 18l-6-6 6-6"/>
+  </symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-width="2" d="M9 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-width="2" d="M18 6L6 18M6 6l12 12"/>
+  </symbol>
+</svg>
+
+<style>
+  /* Screenshot grid */
+  .ss-grid { display:grid; gap:16px; }
+  @media (min-width:640px){ .ss-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (min-width:1024px){ .ss-grid{ grid-template-columns: repeat(3,1fr); } }
+  .ss-card img { width:100%; height:auto; border-radius:12px; display:block; cursor:zoom-in; }
+  .ss-card figcaption { font-size:12px; color:var(--slate-600); margin-top:6px; }
+
+  /* Lightbox */
+  .lightbox { position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(0,0,0,.85); }
+  .lightbox.open { display:flex; }
+  .lightbox__stage { position:relative; width:100%; max-width:1200px; }
+  .lightbox__img { width:100%; max-height:80vh; object-fit:contain; border-radius:12px; background:#000; }
+  .lightbox__caption { color:#e5e7eb; text-align:center; margin-top:8px; font-size:14px; }
+
+  .lightbox__btn { position:absolute; top:50%; transform:translateY(-50%); border:0; width:44px; height:44px; border-radius:999px; background:rgba(255,255,255,.14); backdrop-filter:blur(4px); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
+  .lightbox__btn:focus { outline:2px solid #93c5fd; outline-offset:2px; }
+  .lightbox__prev { left:-56px; }
+  .lightbox__next { right:-56px; }
+  .lightbox__close { top:-56px; right:0; transform:none; }
+
+  @media (max-width: 720px){
+    .lightbox__prev { left:8px; }
+    .lightbox__next { right:8px; }
+    .lightbox__close { top:8px; right:8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true"
+            style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+    </a>
+
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav>Home</a>
+      <a href="skills.html" data-nav>Skills</a>
+      <a href="projects.html" data-nav>Projects</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="16" height="16"><use href="#i-github"/></svg> GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="flex" style="justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end">
+        <div>
+          <h1 class="h1 text-grad-slate">Crisis Zones Forecast Dashboard</h1>
+          <p class="lead">Screenshots & short notes</p>
+        </div>
+        <div class="flex gap8" style="flex-wrap:wrap">
+          <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
+          <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16"><use href="#i-github"/></svg> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="section">
+    <div class="container">
+      <article class="card">
+        <div class="card-body">
+          <p class="mb16">
+            A GIS-GEOINT web app that visualizes historical and forecasted conflict events in Poland using ACLED data.
+            Built with ASP.NET Core MVC and Google Maps API, it lets users explore trends on a live map with filters, a forecast panel, and dynamic charts.
+          </p>
+
+          <div class="flex gap8 mb16" style="flex-wrap:wrap">
+            <span class="badge badge-white">ASP.NET Core MVC</span>
+            <span class="badge badge-white">C#</span>
+            <span class="badge badge-white">REST APIs</span>
+            <span class="badge badge-white">Google Maps API</span>
+            <span class="badge badge-white">Chart.js</span>
+            <span class="badge badge-white">ArcGIS Pro</span>
+            <span class="badge badge-white">GeoJSON</span>
+            <span class="badge badge-white">JSON</span>
+            <span class="badge badge-white">Postman</span>
+          </div>
+
+          <div class="grid-2" style="gap:16px">
+            <div>
+              <strong>Key Features</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>Conflict map with clustering &amp; InfoWindows (event/sub-event, date, city, notes).</li>
+                <li>Forecast panel loads <code>poland_enhanced_forecasts.json</code> (events, fatalities, likely protest types, regional breakdown).</li>
+                <li>Filters by event type, sub-event type, city, and year (updates map &amp; charts in real time).</li>
+                <li>Charts: bar (events by type), line (fatalities over time), pie (events by city).</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Architecture</strong>
+              <ul class="m0" style="padding-left:18px;color:var(--slate-600)">
+                <li>MVC Controllers: <em>ConflictEventsController</em>, <em>ForecastController</em> (JSON endpoints).</li>
+                <li>Services: <em>GeoJsonService</em> (ACLED parsing), <em>ForecastService</em> (forecast loader/transform).</li>
+                <li>Models: <em>ConflictEvent</em>, <em>ForecastData</em>, <em>CityForecast</em>.</li>
+                <li>Frontend: <code>Index.cshtml</code>, <code>main.js</code> (map/filters/panel), <code>charts.js</code>, <code>styles.css</code>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt16">
+            <strong>Data Source</strong>
+            <div class="text-muted">
+              ACLED (Armed Conflict Location &amp; Event Data Project) — filtered for Poland via ArcGIS Pro, exported to GeoJSON. Forecasts generated with a 3-month moving average and stored in <code>poland_enhanced_forecasts.json</code>.
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section">
+    <div class="container">
+      <h2 class="h2 mb16">Screenshots</h2>
+      <h3 class="h3 mb16">Click on images to zoom in</h3>
+      <div class="ss-grid" data-ss-grid>
+        <!-- 0 -->
+        <figure class="ss-card">
+          <img data-ss-index="0" src="crisis/crisis-1.png" alt="Map overview with clustered ACLED events across Poland"/>
+          <figcaption>Map overview with clustered ACLED events across Poland</figcaption>
+        </figure>
+        <!-- 1 -->
+        <figure class="ss-card">
+          <img data-ss-index="1" src="crisis/crisis-2.png" alt="Filter panel with event type, sub-event, city, year and etc"/>
+          <figcaption>Filter panel with event type, sub-event, city, year and etc</figcaption>
+        </figure>
+        <!-- 2 -->
+        <figure class="ss-card">
+          <img data-ss-index="2" src="crisis/crisis-3.png" alt="City level pegman use"/>
+          <figcaption>City level pegman use</figcaption>
+        </figure>
+        <!-- 3 -->
+        <figure class="ss-card">
+          <img data-ss-index="3" src="crisis/crisis-4.png" alt="Reaching exact location and visualizing the area and the existing crisis"/>
+          <figcaption>Reaching exact location and visualizing the area and the existing crisis</figcaption>
+        </figure>
+        <!-- 4 -->
+        <figure class="ss-card">
+          <img data-ss-index="4" src="crisis/crisis-5.png" alt="Line chart visualizing statistics over time"/>
+          <figcaption>Line chart visualizing statistics over time</figcaption>
+        </figure>
+        <!-- 5 -->
+        <figure class="ss-card">
+          <img data-ss-index="5" src="crisis/crisis-6.png" alt="Matematcial Forecasting System"/>
+          <figcaption>Matematcial Forecasting System</figcaption>
+        </figure>
+        <!-- 6 -->
+        <figure class="ss-card">
+          <img data-ss-index="5" src="crisis/crisis-7.png" alt="Pie chart showing events by city"/>
+          <figcaption>Clustering</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot viewer">
+    <div class="lightbox__stage">
+      <button class="lightbox__btn lightbox__close" id="lbClose" aria-label="Close (Esc)">
+        <svg width="22" height="22" style="color:#fff"><use href="#i-x"/></svg>
+      </button>
+
+      <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Previous (←)">
+        <svg width="22" height="22" style="color:#fff"><use href="#i-chevron-left"/></svg>
+      </button>
+
+      <img id="lbImg" class="lightbox__img" src="" alt="Screenshot"/>
+      <div id="lbCap" class="lightbox__caption"></div>
+
+      <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Next (→)">
+        <svg width="22" height="22" style="color:#fff"><use href="#i-chevron-right"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container center">
+      <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="text-white-70">© 2025 Portfolio.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const grid = document.querySelector('[data-ss-grid]');
+    const imgs = Array.from(document.querySelectorAll('[data-ss-index]'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const btnPrev = document.getElementById('lbPrev');
+    const btnNext = document.getElementById('lbNext');
+    const btnClose = document.getElementById('lbClose');
+
+    let current = 0;
+
+    function openLB(index){
+      current = index;
+      const fig = imgs[current].closest('figure');
+      const capEl = fig ? fig.querySelector('figcaption') : null;
+      lbImg.src = imgs[current].getAttribute('src');
+      lbImg.alt = imgs[current].getAttribute('alt') || 'Screenshot';
+      lbCap.textContent = capEl ? capEl.textContent : '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLB(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+      lbCap.textContent = '';
+    }
+
+    function next(){
+      current = (current + 1) % imgs.length;
+      openLB(current);
+    }
+
+    function prev(){
+      current = (current - 1 + imgs.length) % imgs.length;
+      openLB(current);
+    }
+
+    // click thumbnails
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        const idx = parseInt(img.getAttribute('data-ss-index'), 10);
+        openLB(idx);
+      });
+    });
+
+    // buttons
+    btnNext.addEventListener('click', (e)=>{ e.stopPropagation(); next(); });
+    btnPrev.addEventListener('click', (e)=>{ e.stopPropagation(); prev(); });
+    btnClose.addEventListener('click', (e)=>{ e.stopPropagation(); closeLB(); });
+
+    // close when clicking backdrop (but not when clicking inside stage)
+    lb.addEventListener('click', (e)=>{
+      const stage = e.target.closest('.lightbox__stage');
+      if(!stage){ closeLB(); }
+    });
+
+    // keyboard
+    document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape'){ closeLB(); }
+      if(e.key === 'ArrowRight'){ next(); }
+      if(e.key === 'ArrowLeft'){ prev(); }
+    });
+  })();
+</script>
+
+</body>
+</html>
