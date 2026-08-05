@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projects • Suad Arzimanlı</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<script src="theme-init.js"></script>
+<script defer src="main.js"></script>
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l10 6-10 6L2 9l10-6z"/><path stroke-width="2" d="M2 15l10 6 10-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
+  <symbol id="i-barchart" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="12" y="6" width="3" height="11"/><rect x="17" y="13" width="3" height="4"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></symbol>
+</svg>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true" style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="research.html" data-nav><svg width="16" height="16"><use href="#i-layers"/></svg> Research</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu"><svg width="22" height="22"><use href="#i-folder"/></svg></button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav>Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav>Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav>Projects</a>
+    <a href="research.html" class="drawer-link" data-close-drawer data-nav>Research</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav>About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer>GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="section-tight">
+    <div class="container center">
+      <h1 class="h1 text-grad-slate">Projects</h1>
+      <p class="lead mb24" style="max-width:640px;margin-inline:auto">
+        Geospatial research applications and selected software work — each with screenshots and a short write-up.
+      </p>
+      <div class="flex gap8 justify-center mb16" style="flex-wrap:wrap" data-filter-wrap>
+        <button class="btn btn-primary" data-category="All">All</button>
+        <button class="btn btn-outline" data-category="Research">Research</button>
+        <button class="btn btn-outline" data-category="Software">Software</button>
+      </div>
+      <a href="research.html" class="btn btn-outline">
+        <svg width="16" height="16"><use href="#i-layers"/></svg> Research overview
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+
+        <!-- Wars In All World -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/wars-in-all-world/WarsinWorld5.png" alt="Wars In All World research atlas globe"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Wars In All World</div>
+            <p class="text-muted">Interactive research atlas of recorded wars — multi-source ETL, Leaflet map, Cesium globe, and coverage-aware filters.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">React</span>
+              <span class="badge badge-white">TypeScript</span>
+              <span class="badge badge-white">Leaflet</span>
+              <span class="badge badge-white">Python ETL</span>
+            </div>
+            <div class="flex gap8" style="flex-wrap:wrap">
+              <a href="project-wars-in-all-world.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+              <a href="https://suadarzimanli.github.io/WarsInAllWorld/" class="btn btn-outline flex-1" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Live app</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 1. Zürich Tree Management -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/zurich-trees/OverallAppItself.png" alt="Zürich municipal tree research app"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Zürich Trees (municipal SR research)</div>
+            <p class="text-muted">Design-science demonstrator: service-request workflow on Zürich open Baumkataster — map intake, desk view, inspection phases.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">ASP.NET Core</span>
+              <span class="badge badge-white">Open data</span>
+              <span class="badge badge-white">WFS</span>
+            </div>
+            <a href="project-zurich-trees.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+        <!-- 2. GEOINT Crisis Zones -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/geoint/fig-main-interface.png" alt="GEOINT crisis zones application"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">GEOINT Crisis Zones</div>
+            <p class="text-muted">ACLED event mapping for Poland with filters, charts, and evaluated city-level forecasts. ASP.NET Core 8 + Google Maps.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">ASP.NET Core</span>
+              <span class="badge badge-white">Google Maps</span>
+              <span class="badge badge-white">Chart.js</span>
+              <span class="badge badge-white">GeoJSON</span>
+            </div>
+            <a href="project-geoint.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+        <!-- 3. Water Leak Monitoring -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/water-leak/fig-dashboard-overview.png" alt="Water leak monitoring dashboard"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Water Leak Monitoring</div>
+            <p class="text-muted">Synthetic SCADA demonstrator with zone map, in-browser ML detection, and operator close-out workflow.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">Leaflet</span>
+              <span class="badge badge-white">JavaScript</span>
+              <span class="badge badge-white">ML</span>
+            </div>
+            <div class="flex gap8" style="flex-wrap:wrap">
+              <a href="project-water-leak.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+              <a href="https://suadarzimanli.github.io/water-leak-monitoring-dashboard/" class="btn btn-outline flex-1" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Live app</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Urban Heat Island — Łódź -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/urban-heat/fig-app-overview.png" alt="Urban heat island Łódź"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Urban Heat Island — Łódź</div>
+            <p class="text-muted">NDVI–LST grid analysis with an open Leaflet map. 1,544 cells, regression scatterplot, classified rasters.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">Leaflet</span>
+              <span class="badge badge-white">Remote sensing</span>
+              <span class="badge badge-white">GEE</span>
+            </div>
+            <div class="flex gap8" style="flex-wrap:wrap">
+              <a href="project-urban-heat.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+              <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" class="btn btn-outline flex-1" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Live app</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. GeoLineage -->
+        <article class="card project-card" data-project-card data-category="Research">
+          <div class="image-wrap">
+            <img src="./research/geolineage/fig-demo-overview.png" alt="GeoLineage provenance demo"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Research</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">GeoLineage</div>
+            <p class="text-muted">STAC → GeoParquet pipeline with JSON lineage receipts, diff views, and minimum recompute. Streamlit demo.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">Python</span>
+              <span class="badge badge-white">STAC</span>
+              <span class="badge badge-white">Streamlit</span>
+            </div>
+            <a href="project-geolineage.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+        <!-- User Request Export -->
+        <article class="card project-card" data-project-card data-category="Software">
+          <div class="image-wrap">
+            <img src="./software/user-request-export/UserRequestExport1.png" alt="User Request Export WinForms app"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Software</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">User Request Export</div>
+            <p class="text-muted">.NET 8 WinForms tool for Visual FoxPro / dBase tables — export, memo (FPT) reading, enrich by key, and cell-level verification.</p>
+            <div class="flex gap8 mb16" style="flex-wrap:wrap">
+              <span class="badge badge-white">.NET 8</span>
+              <span class="badge badge-white">WinForms</span>
+              <span class="badge badge-white">DBF / FPT</span>
+            </div>
+            <div class="flex gap8" style="flex-wrap:wrap">
+              <a href="project-user-request-export.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+              <a href="https://github.com/suadarzimanli/UserRequestExport" class="btn btn-outline flex-1" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Ticket Supportdesk -->
+        <article class="card project-card" data-project-card data-category="Software">
+          <div class="image-wrap">
+            <img src="./software/supportdesk/supportdesk-cover.png" alt="Ticket supportdesk application"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Software</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Ticket Supportdesk</div>
+            <p class="text-muted">ASP.NET MVC helpdesk — ticket CRUD, comments, dashboard metrics, filters, and CSV export.</p>
+            <a href="project-supportdesk.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+        <!-- 7. Arborist Tree Management -->
+        <article class="card project-card" data-project-card data-category="Software">
+          <div class="image-wrap">
+            <img src="./software/arborist/arborist-cover.png" alt="Arborist tree management"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Software</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Arborist (practice inventory app)</div>
+            <p class="text-muted">Practice .NET tree inventory &amp; inspections with map filters — separate from the Zürich municipal research project.</p>
+            <a href="project-arborist.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+        <!-- 8. Battleship Assistant -->
+        <article class="card project-card" data-project-card data-category="Software">
+          <div class="image-wrap">
+            <img src="./software/battleship/battleship-cover.png" alt="Battleship Windows Forms game"/>
+            <div class="image-grad"></div>
+            <div class="badge badge-emerald" style="position:absolute;top:14px;left:14px;border:0">Software</div>
+          </div>
+          <div class="card-body">
+            <div class="h3">Battleship Assistant</div>
+            <p class="text-muted">C# Windows Forms game with login, SQL Server storage, and a computer opponent.</p>
+            <a href="project-battleship.html" class="btn btn-primary flex-1"><svg width="16" height="16"><use href="#i-external"/></svg> View project</a>
+          </div>
+        </article>
+
+      </div>
+
+      <section class="card center" style="margin-top:48px;background:linear-gradient(90deg,#0f172a,#111827);color:#fff">
+        <div class="card-body">
+          <h2 class="h2">Research write-ups</h2>
+          <p class="lead text-white-70 mb24">Methods, evaluation metrics, and full screenshot galleries for each geospatial project.</p>
+          <a href="research.html" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-layers"/></svg> Open research page</a>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <strong>Suad Arzimanlı</strong>
+    <div class="text-white-70">© 2026 Portfolio</div>
+  </div>
+</footer>
+</body>
+</html>

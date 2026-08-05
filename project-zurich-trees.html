@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zürich Trees (municipal SR research) • Suad Arzimanlı</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<script src="theme-init.js"></script>
+<script defer src="main.js"></script>
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l10 6-10 6L2 9l10-6z"/><path stroke-width="2" d="M2 15l10 6 10-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path stroke-width="2" d="M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 4h16v16H4z"/><path stroke-width="2" d="M4 6l8 6 8-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 6L6 18M6 6l12 12"/></symbol>
+</svg>
+</head>
+<body class="research-detail">
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true" style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="research.html" data-nav><svg width="16" height="16"><use href="#i-layers"/></svg> Research</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu"><svg width="22" height="22"><use href="#i-layers"/></svg></button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav>Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav>Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav>Projects</a>
+    <a href="research.html" class="drawer-link" data-close-drawer data-nav>Research</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav>About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer>GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="research-hero">
+    <div class="container">
+      <span class="research-kicker">Independent research application</span>
+      <h1 class="h1">Zürich Trees (municipal SR research)</h1>
+      <p class="lead">A design-science demonstrator that organises municipal tree governance around the service request — from map intake through inspection to closure, using City of Zürich open Baumkataster data. Separate from the Arborist practice inventory app.</p>
+      <div class="research-hero-actions">
+        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Z%C3%BCrich%20Tree%20Management" class="btn btn-primary"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="research.html" class="btn btn-outline">← Research</a>
+        <a href="projects.html" class="btn btn-outline">← Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="research-metrics">
+        <div class="research-metric"><span class="val">4</span><span class="lbl">Workflow phases (SR → closed)</span></div>
+        <div class="research-metric"><span class="val">5</span><span class="lbl">Desk tabs per service request</span></div>
+        <div class="research-metric"><span class="val">EN / DE</span><span class="lbl">Bilingual interface</span></div>
+      </div>
+
+      <div class="research-layout">
+        <aside class="research-aside">
+          <div class="card">
+            <div class="card-body">
+              <p class="research-aside-title">Paper</p>
+              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Z%C3%BCrich%20Tree%20Management" class="btn btn-outline" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <p class="research-aside-title">Type</p>
+              <ul class="research-aside-list">
+                <li>Independent research</li>
+                <li>Educational / academic use</li>
+              </ul>
+              <p class="research-aside-title" style="margin-top:16px">Technologies</p>
+              <ul class="research-aside-list">
+                <li>ASP.NET Core MVC</li>
+                <li>Google Maps API</li>
+                <li>Zürich Baumkataster WFS</li>
+                <li>Entity Framework · SQLite</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <div class="research-main">
+          <div class="research-block">
+            <p class="research-section-label">Overview</p>
+            <h2>What this project does</h2>
+            <p>An ASP.NET Core demonstrator that treats the service request as the main case record. Citizens report tree issues on a map linked to OGD inventory; desk staff triage, inspect, and close cases — with map and desk sharing the same phase logic.</p>
+          </div>
+          <div class="research-block">
+            <p class="research-section-label">Research questions</p>
+            <h2>What I set out to answer</h2>
+            <ul>
+              <li>Does anchoring the interface on the SR number make the workflow easier to explain and navigate?</li>
+              <li>Does map-based intake — linking a report to a Baumnummer from open cadastre data — reduce ambiguous locations compared with address-only forms?</li>
+              <li>What benefits and risks appear when public OGD tree layers are combined with local case records in one application?</li>
+              <li>What could a city build on top of this structure later — analytics, resident status views — even if this demonstrator does not implement those features?</li>
+            </ul>
+          </div>
+          <div class="research-block">
+            <p class="research-section-label">Key findings</p>
+            <h2>What the design study showed</h2>
+            <ul>
+              <li>Organising tabs and search around the SR number matched how desk staff are expected to work; map and desk call the same phase logic with no duplicate definitions.</li>
+              <li>Linking reports to Baumnummer and OGD attributes reduced free-text guesswork, though high zoom is required before individual trees are selectable.</li>
+              <li>Combining public trees with private case rows worked for a demonstrator; deployment would need privacy controls, OGD attribution, and endpoint stability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <p class="research-section-label">Application</p>
+      <h2 class="h2 mb16">Screenshots</h2>
+      <p class="text-muted mb16">Click any image to zoom in.</p>
+      <div class="ss-grid">
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/OverallAppItself.png" alt="Main application view with tree map"/>
+          <figcaption>Main app — tree inventory map with service request panel</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/OverallAppItselfWithFilters.png" alt="Application with active tree filters"/>
+          <figcaption>With filters — narrow trees by species, status, or district</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/OverallAppItselfWithSatelliteImagery.png" alt="Application with satellite basemap"/>
+          <figcaption>Satellite basemap — aerial context for tree locations</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/OverallAppItselfWithSRsLoadedOnMap.png" alt="Open service requests shown on map"/>
+          <figcaption>SRs on map — open service requests plotted alongside trees</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-map-overview.png" alt="Map overview of Zürich tree inventory"/>
+          <figcaption>Map overview — full Baumkataster layer across the city</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-map-pick.png" alt="Map pick tool for reporting a tree issue"/>
+          <figcaption>Map pick — citizen selects a tree to file a report</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-311-page.png" alt="311-style service request intake form"/>
+          <figcaption>311 intake — citizen-facing service request form</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-desk-detail.png" alt="Desk view with service request detail"/>
+          <figcaption>Desk detail — staff triage view with SR history</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-activities.png" alt="Activity log for a service request"/>
+          <figcaption>Activities — audit trail of actions on a request</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-workflow-inspection.png" alt="Field inspection workflow step"/>
+          <figcaption>Inspection workflow — field crew closes out the request</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot viewer">
+    <div class="lb-stage">
+      <img class="lb-img" id="lb-img" alt="Screenshot"/>
+      <div class="lb-caption" id="lb-caption"></div>
+      <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">
+        <svg width="22" height="22"><use href="#i-chevron-left"/></svg>
+      </button>
+      <button class="lb-btn lb-next" id="lb-next" aria-label="Next">
+        <svg width="22" height="22"><use href="#i-chevron-right"/></svg>
+      </button>
+      <button class="lb-close" id="lb-close" aria-label="Close">
+        <svg width="20" height="20"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="text-white-70">© 2026 Portfolio</div>
+  </div>
+</footer>
+
+<script src="gallery.js"></script>
+</body>
+</html>

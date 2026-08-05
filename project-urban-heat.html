@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Urban Heat Island — Łódź • Suad Arzimanlı</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<script src="theme-init.js"></script>
+<script defer src="main.js"></script>
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l10 6-10 6L2 9l10-6z"/><path stroke-width="2" d="M2 15l10 6 10-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path stroke-width="2" d="M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 4h16v16H4z"/><path stroke-width="2" d="M4 6l8 6 8-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 6L6 18M6 6l12 12"/></symbol>
+</svg>
+</head>
+<body class="research-detail">
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true" style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="research.html" data-nav><svg width="16" height="16"><use href="#i-layers"/></svg> Research</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu"><svg width="22" height="22"><use href="#i-layers"/></svg></button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav>Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav>Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav>Projects</a>
+    <a href="research.html" class="drawer-link" data-close-drawer data-nav>Research</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav>About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer>GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="research-hero">
+    <div class="container">
+      <span class="research-kicker">Independent research application</span>
+      <h1 class="h1">Urban Heat Island — Łódź</h1>
+      <p class="lead">Sentinel-2 NDVI and Landsat-8 LST combined on a 500&nbsp;m grid across Łódź — with regression, classified rasters, and an open web map for neighbourhood-level exploration.</p>
+      <div class="research-hero-actions">
+        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Urban%20Heat%20Island%20Lodz" class="btn btn-primary"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
+        <a href="research.html" class="btn btn-outline">← Research</a>
+        <a href="projects.html" class="btn btn-outline">← Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="research-metrics">
+        <div class="research-metric"><span class="val">1,544</span><span class="lbl">Grid cells (500&nbsp;m over Łódź)</span></div>
+        <div class="research-metric"><span class="val">0.132</span><span class="lbl">R² (NDVI vs LST regression)</span></div>
+        <div class="research-metric"><span class="val">GEE</span><span class="lbl">Sentinel-2 + Landsat-8 pipeline</span></div>
+      </div>
+
+      <div class="research-layout">
+        <aside class="research-aside">
+          <div class="card">
+            <div class="card-body">
+              <p class="research-aside-title">Paper</p>
+              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Urban%20Heat%20Island%20Lodz" class="btn btn-outline" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
+              <p class="research-aside-title">Type</p>
+              <ul class="research-aside-list">
+                <li>Independent research</li>
+                <li>Educational / academic use</li>
+              </ul>
+              <p class="research-aside-title" style="margin-top:16px">Technologies</p>
+              <ul class="research-aside-list">
+                <li>Leaflet</li>
+                <li>Sentinel-2 NDVI</li>
+                <li>Landsat-8 LST</li>
+                <li>Python · GeoPandas</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <div class="research-main">
+          <div class="research-block">
+            <p class="research-section-label">Overview</p>
+            <h2>What this project does</h2>
+            <p>A static web map that layers summer NDVI and land-surface temperature on a 500&nbsp;m grid over Łódź. Users toggle classified rasters, inspect cell values, and open a regression summary — so neighbourhood-level hot and green spots are visible, not only a city-wide average.</p>
+          </div>
+          <div class="research-block">
+            <p class="research-section-label">Research questions</p>
+            <h2>What I set out to answer</h2>
+            <ul>
+              <li>How strongly is vegetation (NDVI) associated with land-surface temperature at 500&nbsp;m grid scale in Łódź for a summer window?</li>
+              <li>Where do hotter and greener cells cluster — and where do neighbouring cells diverge sharply?</li>
+              <li>Can an interactive map make grid statistics explorable without a separate statistics file?</li>
+              <li>What do the limits of a weak city-wide correlation imply for green-infrastructure planning narratives?</li>
+            </ul>
+          </div>
+          <div class="research-block">
+            <p class="research-section-label">Key findings</p>
+            <h2>What the analysis showed</h2>
+            <ul>
+              <li>Greener cells tend to be cooler, but NDVI explains only about 13% of LST variance (R² = 0.132) at this scale and season.</li>
+              <li>Heat and vegetation are patchy — industrial corridors and parks can sit beside hot sealed blocks; a single city average would wash that out.</li>
+              <li>The grid plus interactive map let readers see which cells sit above or below the regression line and where they are on the ground.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <p class="research-section-label">Application</p>
+      <h2 class="h2 mb16">Screenshots</h2>
+      <p class="text-muted mb16">Click any image to zoom in.</p>
+      <div class="ss-grid">
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-app-overview.png" alt="Urban heat island web app overview"/>
+          <figcaption>App overview — interactive map with layer controls</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-about-methods.png" alt="About page explaining methods"/>
+          <figcaption>About &amp; methods — how NDVI and LST were derived</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-grid-500m.png" alt="500 metre analysis grid over Łódź"/>
+          <figcaption>500&nbsp;m grid — 1,544 cells covering the city</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-ndvi-classified.png" alt="Classified NDVI vegetation map"/>
+          <figcaption>NDVI classified — greener vs. sparser vegetation zones</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-lst-classified.png" alt="Classified land surface temperature map"/>
+          <figcaption>LST classified — hotter vs. cooler surface areas</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-regression-modal.png" alt="Regression analysis modal"/>
+          <figcaption>Regression modal — NDVI vs. LST relationship summary</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-regression-scatter.png" alt="Scatter plot of NDVI against LST"/>
+          <figcaption>Scatter plot — vegetation index plotted against temperature</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot viewer">
+    <div class="lb-stage">
+      <img class="lb-img" id="lb-img" alt="Screenshot"/>
+      <div class="lb-caption" id="lb-caption"></div>
+      <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">
+        <svg width="22" height="22"><use href="#i-chevron-left"/></svg>
+      </button>
+      <button class="lb-btn lb-next" id="lb-next" aria-label="Next">
+        <svg width="22" height="22"><use href="#i-chevron-right"/></svg>
+      </button>
+      <button class="lb-close" id="lb-close" aria-label="Close">
+        <svg width="20" height="20"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <div class="text-white-70">© 2026 Portfolio</div>
+  </div>
+</footer>
+
+<script src="gallery.js"></script>
+</body>
+</html>

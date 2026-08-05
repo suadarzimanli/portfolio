@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Research • Suad Arzimanlı</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<script src="theme-init.js"></script>
+<script defer src="main.js"></script>
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 10.5C21 16 12 23 12 23S3 16 3 10.5a9 9 0 1118 0z"/><circle cx="12" cy="10.5" r="3" stroke-width="2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4" stroke-width="2"/><path stroke-width="2" d="M6 21v-2a6 6 0 0112 0v2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 7h5l2 2h11v9a2 2 0 01-2 2H3z"/><path stroke-width="2" d="M3 7v10a2 2 0 002 2h14"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l10 6-10 6L2 9l10-6z"/><path stroke-width="2" d="M2 15l10 6 10-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 000 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0024 12.3C24 5.8 18.6.5 12 .5z"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path stroke-width="2" d="M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 4h16v16H4z"/><path stroke-width="2" d="M4 6l8 6 8-6"/></symbol>
+</svg>
+</head>
+<body class="research-index">
+
+<header class="site-header">
+  <div class="container" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" class="flex items-center gap12" data-nav>
+      <span class="round-lg flex items-center justify-center" aria-hidden="true" style="background:linear-gradient(135deg,#10b981,#2563eb);width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20"><use href="#i-map-pin"/></svg>
+      </span>
+      <span class="only-desktop">
+        <div class="h3 m0 text-grad-slate">Suad Arzimanlı</div>
+        <div class="text-muted" style="font-size:12px;margin-top:-6px">Portfolio</div>
+      </span>
+      <span class="brand-mobile only-mobile">
+        <span class="brand-title text-grad-slate">Suad Arzimanlı</span>
+        <span class="brand-sub">Portfolio</span>
+      </span>
+    </a>
+    <nav class="nav only-desktop">
+      <a href="index.html" data-nav><svg width="16" height="16"><use href="#i-map-pin"/></svg> Home</a>
+      <a href="skills.html" data-nav><svg width="16" height="16"><use href="#i-code"/></svg> Skills</a>
+      <a href="projects.html" data-nav><svg width="16" height="16"><use href="#i-folder"/></svg> Projects</a>
+      <a href="research.html" data-nav><svg width="16" height="16"><use href="#i-layers"/></svg> Research</a>
+      <a href="about.html" data-nav><svg width="16" height="16"><use href="#i-user"/></svg> About</a>
+      <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+    </nav>
+    <button id="menu-toggle" class="btn btn-icon only-mobile" aria-label="Open menu"><svg width="22" height="22"><use href="#i-layers"/></svg></button>
+  </div>
+</header>
+
+<aside id="mobile-drawer" class="drawer">
+  <div class="container">
+    <a href="index.html" class="drawer-link" data-close-drawer data-nav>Home</a>
+    <a href="skills.html" class="drawer-link" data-close-drawer data-nav>Skills</a>
+    <a href="projects.html" class="drawer-link" data-close-drawer data-nav>Projects</a>
+    <a href="research.html" class="drawer-link" data-close-drawer data-nav>Research</a>
+    <a href="about.html" class="drawer-link" data-close-drawer data-nav>About</a>
+    <a href="https://github.com/suadarzimanli" target="_blank" rel="noopener" class="drawer-link" data-close-drawer>GitHub</a>
+  </div>
+</aside>
+
+<main>
+  <section class="research-hero">
+    <div class="container center">
+      <span class="research-kicker"><svg width="14" height="14"><use href="#i-layers"/></svg> Independent research applications</span>
+      <h1 class="h1">Geospatial research &amp; applications</h1>
+      <p class="lead" style="margin-inline:auto">
+        Selected projects that pair runnable software with documented methods — papers where available, plus independent research applications without a formal PDF yet.
+      </p>
+      <div class="research-hero-actions justify-center">
+        <a href="projects.html" class="btn btn-outline">← All projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container research-list">
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/wars-in-all-world/WarsinWorld5.png" alt="Wars In All World research atlas globe"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">Historical conflict · Multi-source ETL · Web GIS</div>
+          <h2 class="h2">Wars In All World</h2>
+          <p class="lead">Interactive research atlas of recorded wars — Map, Globe, and Numbers views over geocoded records from HCED, Correlates of War, War Atlas, and UCDP GED.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">Python ETL</span>
+            <span class="research-stat-pill">Leaflet + Cesium</span>
+            <span class="research-stat-pill">No formal paper yet</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> How filtering, era windows, and spatial coverage tiers change what a conflict atlas appears to show — with honest gaps when battle geography is missing from the sources.</p>
+          <div class="research-entry-actions">
+            <a href="project-wars-in-all-world.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="https://suadarzimanli.github.io/WarsInAllWorld/" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/zurich-trees/OverallAppItself.png" alt="Zürich tree management application"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">Urban forestry · Municipal SR research · Open data</div>
+          <h2 class="h2">Zürich Trees (municipal SR research)</h2>
+          <p class="lead">A design-science demonstrator that organises municipal tree governance around the service request — from map intake through inspection to closure, using City of Zürich open Baumkataster data.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">Zürich OGD WFS</span>
+            <span class="research-stat-pill">SR-centred workflow</span>
+            <span class="research-stat-pill">EN / DE UI</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> Whether tying map intake, desk search, and field steps to one service-request number makes tree-related cases easier to follow than disconnected map and ticket views.</p>
+          <div class="research-entry-actions">
+            <a href="project-zurich-trees.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Z%C3%BCrich%20Tree%20Management" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/geoint/fig-main-interface.png" alt="GEOINT crisis zones map"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">GEOINT · Forecasting · ASP.NET Core</div>
+          <h2 class="h2">GEOINT Crisis Zones</h2>
+          <p class="lead">Interactive mapping of 7,794 ACLED conflict and protest events in Poland (2020–2024), with charts, filters, and city-level forecasts evaluated against held-out months.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">7,794 events</span>
+            <span class="research-stat-pill">RF MAE 1.50</span>
+            <span class="research-stat-pill">12-month holdout</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> Connecting an operational crisis map to a reproducible forecast comparison — not just plotting points, but scoring whether the in-app method holds up against baselines.</p>
+          <div class="research-entry-actions">
+            <a href="project-geoint.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GEOINT%20Crisis%20Zones" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/water-leak/fig-dashboard-overview.png" alt="Water leak monitoring dashboard"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">Infrastructure GIS · Operator workflow · ML</div>
+          <h2 class="h2">Water Leak Monitoring Dashboard</h2>
+          <p class="lead">Educational demonstrator for a fictional water utility: synthetic SCADA readings, zone-level risk scoring, and a persisted operator incident from first alert through close-out.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">Synthetic SCADA</span>
+            <span class="research-stat-pill">In-browser ML</span>
+            <span class="research-stat-pill">Full ticket workflow</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> Whether keeping an open operator incident as the case record — not only a map colour — makes leak monitoring easier to audit and explain.</p>
+          <div class="research-entry-actions">
+            <a href="project-water-leak.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="https://suadarzimanli.github.io/water-leak-monitoring-dashboard/" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
+            <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Water%20Leak%20Monitoring%20Dashboard" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/urban-heat/fig-app-overview.png" alt="Urban heat island Łódź"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">Remote sensing · Grid analysis · Leaflet</div>
+          <h2 class="h2">Urban Heat Island — Łódź</h2>
+          <p class="lead">Sentinel-2 NDVI and Landsat-8 LST combined on a 500&nbsp;m grid across Łódź — with regression, classified rasters, and an open web map for neighbourhood-level exploration.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">1,544 grid cells</span>
+            <span class="research-stat-pill">R² = 0.132</span>
+            <span class="research-stat-pill">GEE pipeline</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> How much vegetation explains where it is hot at grid scale — and whether a weak city-wide correlation still matters when heat and greenness vary block by block.</p>
+          <div class="research-entry-actions">
+            <a href="project-urban-heat.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
+            <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Urban%20Heat%20Island%20Lodz" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card research-entry">
+        <div class="research-entry-media">
+          <img src="./research/geolineage/fig-demo-overview.png" alt="GeoLineage provenance demo"/>
+          <div class="image-grad"></div>
+        </div>
+        <div class="research-entry-body">
+          <div class="research-entry-meta">Data provenance · STAC · Python</div>
+          <h2 class="h2">GeoLineage</h2>
+          <p class="lead">File-based lineage receipts for STAC → GeoParquet pipelines — minimum recompute, diff-since-last-run views, and a Streamlit UI for inspecting what produced each output.</p>
+          <div class="research-stats-row">
+            <span class="research-stat-pill">100% lineage coverage</span>
+            <span class="research-stat-pill">100% reuse (stress test)</span>
+            <span class="research-stat-pill">JSON receipts</span>
+          </div>
+          <p class="research-focus"><strong>Research focus:</strong> Lightweight, inspectable provenance for cloud-native GeoETL — without an external database or enterprise lineage platform.</p>
+          <div class="research-entry-actions">
+            <a href="project-geolineage.html" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Full write-up</a>
+            <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GeoLineage" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <strong>Suad Arzimanlı</strong>
+    <div class="text-white-70">© 2026 Portfolio</div>
+  </div>
+</footer>
+</body>
+</html>
