@@ -67,9 +67,10 @@
     <div class="container">
       <span class="research-kicker">Independent research application</span>
       <h1 class="h1">Zürich Trees (municipal SR research)</h1>
-      <p class="lead">A design-science demonstrator that organises municipal tree governance around the service request — from map intake through inspection to closure, using City of Zürich open Baumkataster data. Separate from the Arborist practice inventory app.</p>
+      <p class="lead">A design study and city-wide analysis: every resident report is anchored to one tree in the City of Zürich open Baumkataster and stays one service request from intake to closure — with public tracking that never shows who reported it. Separate from the Arborist practice inventory app.</p>
       <div class="research-hero-actions">
-        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Z%C3%BCrich%20Tree%20Management" class="btn btn-primary"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="https://github.com/suadarzimanli/zurich-tree-management/blob/main/paper/zurich-tree-management.pdf" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+        <a href="https://github.com/suadarzimanli/zurich-tree-management" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Code on GitHub</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
       </div>
@@ -79,9 +80,9 @@
   <section class="section">
     <div class="container">
       <div class="research-metrics">
-        <div class="research-metric"><span class="val">4</span><span class="lbl">Workflow phases (SR → closed)</span></div>
-        <div class="research-metric"><span class="val">5</span><span class="lbl">Desk tabs per service request</span></div>
-        <div class="research-metric"><span class="val">EN / DE</span><span class="lbl">Bilingual interface</span></div>
+        <div class="research-metric"><span class="val">81,403</span><span class="lbl">Zürich trees analysed</span></div>
+        <div class="research-metric"><span class="val">14%</span><span class="lbl">Street trees identified by an address alone</span></div>
+        <div class="research-metric"><span class="val">99.8%</span><span class="lbl">Intended tree kept in the 10 m map list (8 m tap error)</span></div>
       </div>
 
       <div class="research-layout">
@@ -89,7 +90,8 @@
           <div class="card">
             <div class="card-body">
               <p class="research-aside-title">Paper</p>
-              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Z%C3%BCrich%20Tree%20Management" class="btn btn-outline" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <a href="https://github.com/suadarzimanli/zurich-tree-management/blob/main/paper/zurich-tree-management.pdf" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+              <a href="https://github.com/suadarzimanli/zurich-tree-management" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
                 <li>Independent research</li>
@@ -97,10 +99,11 @@
               </ul>
               <p class="research-aside-title" style="margin-top:16px">Technologies</p>
               <ul class="research-aside-list">
-                <li>ASP.NET Core MVC</li>
+                <li>ASP.NET Core 8 (Razor Pages + API)</li>
                 <li>Google Maps API</li>
-                <li>Zürich Baumkataster WFS</li>
-                <li>Entity Framework · SQLite</li>
+                <li>Zürich Baumkataster WMS / WFS</li>
+                <li>Entity Framework · SQL Server</li>
+                <li>Python (analysis)</li>
               </ul>
             </div>
           </div>
@@ -110,25 +113,24 @@
           <div class="research-block">
             <p class="research-section-label">Overview</p>
             <h2>What this project does</h2>
-            <p>An ASP.NET Core demonstrator that treats the service request as the main case record. Citizens report tree issues on a map linked to OGD inventory; desk staff triage, inspect, and close cases — with map and desk sharing the same phase logic.</p>
+            <p>Residents tap the tree on the map and report the issue in four steps (tree, issue, contact, review), then follow the case on a public tracking page with their reference number. Staff work each case through inspection and work order on a desk with a queue overview. One four-phase status — received, inspection, work order, closed — is shared by map pins, desk and tracking page, and contact details are returned to signed-in staff only.</p>
           </div>
           <div class="research-block">
             <p class="research-section-label">Research questions</p>
             <h2>What I set out to answer</h2>
             <ul>
-              <li>Does anchoring the interface on the SR number make the workflow easier to explain and navigate?</li>
-              <li>Does map-based intake — linking a report to a Baumnummer from open cadastre data — reduce ambiguous locations compared with address-only forms?</li>
-              <li>What benefits and risks appear when public OGD tree layers are combined with local case records in one application?</li>
-              <li>What could a city build on top of this structure later — analytics, resident status views — even if this demonstrator does not implement those features?</li>
+              <li>How can tree-related service requests be organised so that intake, inspection, work order and closure form one traceable case for residents and staff?</li>
+              <li>How much location ambiguity does tree-anchored map intake remove compared with street-only and address-only descriptions — and how robust is it to imprecise touch input?</li>
+              <li>Which privacy requirements follow from combining public open-data layers with resident case data, and how can a system enforce them?</li>
             </ul>
           </div>
           <div class="research-block">
             <p class="research-section-label">Key findings</p>
-            <h2>What the design study showed</h2>
+            <h2>What the study showed</h2>
             <ul>
-              <li>Organising tabs and search around the SR number matched how desk staff are expected to work; map and desk call the same phase logic with no duplicate definitions.</li>
-              <li>Linking reports to Baumnummer and OGD attributes reduced free-text guesswork, though high zoom is required before individual trees are selectable.</li>
-              <li>Combining public trees with private case rows worked for a demonstrator; deployment would need privacy controls, OGD attribution, and endpoint stability.</li>
+              <li>Addresses rarely identify a tree: for street trees a building address leaves a median of 3 candidate trees and identifies one tree in only 14% of cases; 15% of all trees are more than 60 m from any address.</li>
+              <li>Among four map-selection rules tested under simulated touch error, a distance-ordered list of all trees within 10 m kept the intended tree available in 99.8% of street-tree taps even with an 8 m miss and never attached a report to the wrong tree; automatic nearest-tree selection did so in 26% of taps at a 5 m miss.</li>
+              <li>Public status and private identity can coexist when redaction is enforced at the API boundary rather than in the interface; the rules are covered by automated tests.</li>
             </ul>
           </div>
         </div>
@@ -143,40 +145,44 @@
       <p class="text-muted mb16">Click any image to zoom in.</p>
       <div class="ss-grid">
         <figure class="ss-card">
-          <img src="./research/zurich-trees/OverallAppItself.png" alt="Main application view with tree map" loading="lazy" decoding="async"/>
-          <figcaption>Main app — tree inventory map with service request panel</figcaption>
+          <img src="./research/zurich-trees/OverallAppItself.png" alt="Tree card for a plane tree on the map" loading="lazy" decoding="async"/>
+          <figcaption>Tree card — select a tree to see its cadastre record and report an issue with exactly that tree</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/OverallAppItselfWithFilters.png" alt="Application with active tree filters" loading="lazy" decoding="async"/>
-          <figcaption>With filters — narrow trees by species, status, or district</figcaption>
+          <img src="./research/zurich-trees/OverallAppItselfWithFilters.png" alt="Filters panel with request pins on the map" loading="lazy" decoding="async"/>
+          <figcaption>Filters — load requests, search an address or tree number, and filter pins by phase, category and priority</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/OverallAppItselfWithSatelliteImagery.png" alt="Application with satellite basemap" loading="lazy" decoding="async"/>
-          <figcaption>Satellite basemap — aerial context for tree locations</figcaption>
+          <img src="./research/zurich-trees/OverallAppItselfWithSatelliteImagery.png" alt="Satellite basemap with request pins" loading="lazy" decoding="async"/>
+          <figcaption>Satellite basemap — aerial context for tree locations and request pins</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-map-overview.png" alt="Zürich Baumkataster map with open service requests" loading="lazy" decoding="async"/>
-          <figcaption>Map overview — full Baumkataster layer across the city, with open service requests plotted alongside trees</figcaption>
+          <img src="./research/zurich-trees/fig-map-overview.png" alt="City-wide map with all request pins" loading="lazy" decoding="async"/>
+          <figcaption>Map overview — the full Baumkataster layer with request pins coloured by phase</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-map-pick.png" alt="Map pick tool for reporting a tree issue" loading="lazy" decoding="async"/>
-          <figcaption>Map pick — citizen selects a tree to file a report</figcaption>
+          <img src="./research/zurich-trees/fig-map-pick.png" alt="Phone: first reporting step confirming the selected tree" loading="lazy" decoding="async"/>
+          <figcaption>Phone — first of four reporting steps: “Is this the right tree?”</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-311-page.png" alt="311-style service request intake form" loading="lazy" decoding="async"/>
-          <figcaption>311 intake — citizen-facing service request form</figcaption>
+          <img src="./research/zurich-trees/fig-311-page.png" alt="Check-your-report step of the reporting form" loading="lazy" decoding="async"/>
+          <figcaption>Check your report — every answer can be changed before sending</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-desk-detail.png" alt="Desk view with service request detail" loading="lazy" decoding="async"/>
-          <figcaption>Desk detail — staff triage view with SR history</figcaption>
+          <img src="./research/zurich-trees/fig-desk-detail.png" alt="Staff desk with queue overview and a case in the work-order phase" loading="lazy" decoding="async"/>
+          <figcaption>Desk — queue overview, request age and a case with its four-phase progress bar</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-activities.png" alt="Activity log for a service request" loading="lazy" decoding="async"/>
-          <figcaption>Activities — audit trail of actions on a request</figcaption>
+          <img src="./research/zurich-trees/fig-activities.png" alt="Activities tab with activity plan and log" loading="lazy" decoding="async"/>
+          <figcaption>Activities — activity plan and the written trace of each step</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/zurich-trees/fig-workflow-inspection.png" alt="Field inspection workflow step" loading="lazy" decoding="async"/>
-          <figcaption>Inspection workflow — field crew closes out the request</figcaption>
+          <img src="./research/zurich-trees/fig-workflow-inspection.png" alt="Inspection tab of a case" loading="lazy" decoding="async"/>
+          <figcaption>Inspection — closing with Resolution issues a work order under the same request</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/zurich-trees/fig-tracking.png" alt="Public tracking page for a request" loading="lazy" decoding="async"/>
+          <figcaption>Public tracking — progress and dated timeline by reference number, never the reporter’s identity</figcaption>
         </figure>
       </div>
     </div>
