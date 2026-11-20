@@ -66,10 +66,11 @@
     <div class="container">
       <span class="research-kicker">Independent research application · No formal paper yet</span>
       <h1 class="h1">Wars In All World</h1>
-      <p class="lead">Interactive research atlas of recorded wars — Map, Globe, and Numbers views over geocoded conflict datasets, with transparent coverage and filtering.</p>
+      <p class="lead">Interactive research atlas of recorded wars — Map, Globe, Numbers and a timeline over a reproducible, audited merge of four public conflict datasets, with transparent coverage and filtering.</p>
       <div class="research-hero-actions">
         <a href="https://suadarzimanli.github.io/WarsInAllWorld/" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Live app</a>
         <a href="https://github.com/suadarzimanli/WarsInAllWorld" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> GitHub</a>
+        <a href="https://doi.org/10.5281/zenodo.24401841" class="btn btn-outline" target="_blank" rel="noopener">DOI 10.5281/zenodo.24401841</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
       </div>
@@ -79,9 +80,9 @@
   <section class="section">
     <div class="container">
       <div class="research-metrics">
-        <div class="research-metric"><span class="val">3,081</span><span class="lbl">Wars in catalog</span></div>
-        <div class="research-metric"><span class="val">42k+</span><span class="lbl">Battle points plotted</span></div>
-        <div class="research-metric"><span class="val">3</span><span class="lbl">Views: Map · Globe · Numbers</span></div>
+        <div class="research-metric"><span class="val">2,955</span><span class="lbl">Wars in catalog</span></div>
+        <div class="research-metric"><span class="val">33,455</span><span class="lbl">Geolocated battles &amp; combat events</span></div>
+        <div class="research-metric"><span class="val">4</span><span class="lbl">Source datasets merged</span></div>
       </div>
 
       <div class="research-layout">
@@ -90,7 +91,8 @@
             <div class="card-body">
               <p class="research-aside-title">Links</p>
               <a href="https://suadarzimanli.github.io/WarsInAllWorld/" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
-              <a href="https://github.com/suadarzimanli/WarsInAllWorld" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
+              <a href="https://github.com/suadarzimanli/WarsInAllWorld" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
+              <a href="https://doi.org/10.5281/zenodo.24401841" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px">Cite: DOI (Zenodo)</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
                 <li>Independent research</li>
@@ -124,8 +126,9 @@
             <p class="research-section-label">Methods</p>
             <h2>Data and coverage honesty</h2>
             <ul>
-              <li>ETL merges wars, attaches battles/events, derives approximate theaters, and writes GeoJSON/JSON packs for the SPA.</li>
-              <li>Crosswalk review for ambiguous dataset matches; progress/QA snapshots in the pipeline.</li>
+              <li>Reproducible Python ETL merges wars across HCED, Correlates of War, The War Atlas and UCDP GED, attaches battles/events, derives approximate theaters, and writes GeoJSON/JSON packs for the app.</li>
+              <li>Every cross-source merge is listed for audit, with precision reported as a 95&nbsp;% Wilson interval; ambiguous matches are decided and documented, and multi-phase COW wars receive battles by year.</li>
+              <li>Documented per-record source corrections (raw files untouched), SHA-256 checksums of every input, and an export validator that gates each deploy in CI.</li>
               <li>Coverage tiers: battles vs proxy centroids vs unmapped — missing battle geography usually means no battle layer in the sources.</li>
               <li>In-app citations for underlying datasets; About panel for educational context.</li>
             </ul>
@@ -134,9 +137,12 @@
             <p class="research-section-label">Application</p>
             <h2>What you can explore</h2>
             <ul>
-              <li><strong>/map</strong> — Leaflet points, theaters, equal-area heat modes</li>
+              <li><strong>Time bar</strong> — per-year battle histogram, draggable range, era presets and playback</li>
+              <li><strong>Search</strong> — Ctrl+K to jump to any war or year</li>
+              <li><strong>/map</strong> — Leaflet points, theaters, equal-area heat modes; the selected war is highlighted over its period</li>
               <li><strong>/globe</strong> — 3D Cesium view with shared explorer state</li>
               <li><strong>/insights</strong> — catalog digest, era chips, open on Map/Globe</li>
+              <li>War dossier — key numbers, mapped battles over time, and which dataset contributed what</li>
               <li>Deep links for war selection, era handoff, and optional lat/lng focus</li>
             </ul>
           </div>
@@ -152,32 +158,36 @@
       <p class="text-muted mb16">Click any image to zoom in.</p>
       <div class="ss-grid">
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld1.png" alt="Map view with war list and battle points"/>
-          <figcaption>Map — full catalog with Explorer war list and gold battle pins</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld1.png" alt="Map view with Explorer war list, battle points and time bar" loading="lazy" decoding="async"/>
+          <figcaption>Map — full catalog with the Explorer war list, gold battle pins and the time bar</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld2.png" alt="Filters panel with year range and sources"/>
-          <figcaption>Filters — year windows, definition modes, and map-coverage tiers</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld2.png" alt="Filters panel with year range and source definitions" loading="lazy" decoding="async"/>
+          <figcaption>Filters — year windows, source definitions, and map-coverage tiers</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld3.png" alt="Layers panel with points mode"/>
-          <figcaption>Layers — battles, disputes, centroids, and theater outlines</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld3.png" alt="Layers panel with point layers" loading="lazy" decoding="async"/>
+          <figcaption>Layers — battles, disputes, war pins, and theater outlines</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld4.png" alt="Heat map density view"/>
-          <figcaption>Heat map — relative battle density under current filters</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld4.png" alt="Heat map density view" loading="lazy" decoding="async"/>
+          <figcaption>Heat map — relative density of mapped battles under current filters</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld5.png" alt="3D Cesium globe with battle points"/>
-          <figcaption>Globe — Cesium 3D view with the same explorer state</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld5.png" alt="3D Cesium globe with World War II selected" loading="lazy" decoding="async"/>
+          <figcaption>Globe — Cesium 3D view with the selected war and its dossier</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld6.png" alt="Numbers digest page with catalog stats"/>
-          <figcaption>Numbers — catalog digest by period and source</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld6.png" alt="Numbers digest page with catalog stats" loading="lazy" decoding="async"/>
+          <figcaption>Numbers — catalog digest by period, source and region</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/wars-in-all-world/WarsinWorld7.png" alt="War dossier and theater outline on globe"/>
-          <figcaption>Dossier — selected war details, theater outline, citations, and JSON export</figcaption>
+          <img src="./research/wars-in-all-world/WarsinWorld7.png" alt="World War II dossier and theater outline on the map" loading="lazy" decoding="async"/>
+          <figcaption>Dossier — World War II with battles over time, sources, theater outline and grey context battles</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/wars-in-all-world/WarsinWorld8.png" alt="Search palette finding Napoleonic Wars" loading="lazy" decoding="async"/>
+          <figcaption>Search — Ctrl+K finds any war by name or jumps to a year</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +195,7 @@
 
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot viewer">
     <div class="lb-stage">
-      <img class="lb-img" id="lb-img" alt="Screenshot"/>
+      <img class="lb-img" id="lb-img" alt="Screenshot" loading="lazy" decoding="async"/>
       <div class="lb-caption" id="lb-caption"></div>
       <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">
         <svg width="22" height="22"><use href="#i-chevron-left"/></svg>
