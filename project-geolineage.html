@@ -68,10 +68,11 @@
     <div class="container">
       <span class="research-kicker">Independent research application</span>
       <h1 class="h1">GeoLineage</h1>
-      <p class="lead">Provenance-first GeoETL for STAC searches — per-run lineage receipts, scene-id diffs, and minimum recompute. Hosted cloud demo (GeoJSON footprints) plus a GeoParquet reference CLI.</p>
+      <p class="lead">Provenance for STAC-driven geospatial pipelines: a lineage receipt per run, a diff against the previous run of the same query with a reason for every change, and reuse of unchanged outputs — tested on 8,320 Sentinel-2 items from two public catalogs.</p>
       <div class="research-hero-actions">
-        <a href="https://geolineage-research.pages.dev/" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
-        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GeoLineage" class="btn btn-outline"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="https://github.com/suadarzimanli/GeoLineage-Research/blob/main/Paper/GeoLineage_Research_Paper.pdf" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+        <a href="https://github.com/suadarzimanli/GeoLineage-Research" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Code on GitHub</a>
+        <a href="https://geolineage-research.pages.dev/" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
       </div>
@@ -81,31 +82,30 @@
   <section class="section">
     <div class="container">
       <div class="research-metrics">
-        <div class="research-metric"><span class="val">Live</span><span class="lbl">Hosted demo on Cloudflare Pages</span></div>
-        <div class="research-metric"><span class="val">100%</span><span class="lbl">Reuse on identical re-runs (CLI stress test)</span></div>
-        <div class="research-metric"><span class="val">4/4</span><span class="lbl">Validation suite tests passed</span></div>
+        <div class="research-metric"><span class="val">92%</span><span class="lbl">Weekly diffs of a "newest 10" pipeline that report removals — yet all sampled "removed" scenes were still in the catalog</span></div>
+        <div class="research-metric"><span class="val">0 / 4,140</span><span class="lbl">Same scene with the same id in Earth Search and Planetary Computer</span></div>
+        <div class="research-metric"><span class="val">0.4% vs 100%</span><span class="lbl">Re-runs that can reuse their output: "newest 10" vs a fixed past period</span></div>
       </div>
 
       <div class="research-layout">
         <aside class="research-aside">
           <div class="card">
             <div class="card-body">
-              <p class="research-aside-title">Live demo</p>
-              <a href="https://geolineage-research.pages.dev/" class="btn btn-primary" style="width:100%;margin-bottom:20px" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> geolineage-research.pages.dev</a>
-              <p class="research-aside-title">Paper</p>
-              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GeoLineage" class="btn btn-outline" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <p class="research-aside-title">Paper and code</p>
+              <a href="https://github.com/suadarzimanli/GeoLineage-Research/blob/main/Paper/GeoLineage_Research_Paper.pdf" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+              <a href="https://github.com/suadarzimanli/GeoLineage-Research" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
+              <a href="https://geolineage-research.pages.dev/" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
                 <li>Independent research</li>
-                <li>Working paper + open demo</li>
-                <li>Educational / academic use</li>
+                <li>Working paper + open demo + open code</li>
               </ul>
               <p class="research-aside-title" style="margin-top:16px">Technologies</p>
               <ul class="research-aside-list">
                 <li>Python · STAC · GeoParquet</li>
-                <li>React · Cloudflare Pages/Workers</li>
-                <li>Supabase · GeoJSON footprints</li>
-                <li>JSON lineage receipts</li>
+                <li>TypeScript · Cloudflare Workers/Pages · React</li>
+                <li>Supabase · JSON lineage receipts</li>
+                <li>Earth Search · Planetary Computer</li>
               </ul>
             </div>
           </div>
@@ -115,27 +115,28 @@
           <div class="research-block">
             <p class="research-section-label">Overview</p>
             <h2>What this project does</h2>
-            <p>GeoLineage records what a STAC search actually used and what file it wrote. Each run emits a machine-readable receipt (catalog, search params, input scene ids, transform step, output checksum), can diff scene sets against the previous similar run, and reuses the prior footprint product when inputs are unchanged (minimum recompute).</p>
-            <p>The live app is a thin hosted demo with GeoJSON footprints (Cloudflare + Supabase). A companion reference CLI writes GeoParquet and runs the validation / stress scripts described in the working paper.</p>
+            <p>GeoLineage records what a STAC search used and what it wrote: every run produces a JSON receipt with the normalised query, each input scene with a content hash, the transform and the output checksum. A run is compared only with the previous run of <em>exactly the same query</em> (a hashed query key), changes are classified as added, removed or changed in place, removed scenes are labelled as "outside the window" or "gone", and an unchanged input set reuses the previous output before any work is done.</p>
+            <p>The same contract runs in a Python reference pipeline (GeoParquet) and a hosted demo on Cloudflare and Supabase (GeoJSON); shared test vectors check that both compute identical keys.</p>
           </div>
+
           <div class="research-block">
             <p class="research-section-label">Research questions</p>
             <h2>What I set out to answer</h2>
             <ul>
-              <li>Can a compact JSON receipt answer “what produced this output?” for a STAC → footprint pipeline without an external lineage service?</li>
-              <li>Does an input-set diff (added / removed / unchanged) correctly reflect parameter change between runs?</li>
-              <li>Can minimum recompute skip rewriting identical footprint products while still writing a new audit receipt?</li>
-              <li>Does the same receipt contract transfer from a GeoParquet CLI to a browser-hosted GeoJSON demo?</li>
+              <li>Which identity rules let a per-run receipt answer "what produced this output" and "what changed since the last run" without a lineage service?</li>
+              <li>How stable are STAC query results, and what do naive diffs of a scheduled pipeline report?</li>
+              <li>How often do items change in place, and can the same scene be identified across catalogs?</li>
+              <li>How much work does reuse of unchanged outputs save under realistic query designs?</li>
             </ul>
           </div>
+
           <div class="research-block">
             <p class="research-section-label">Key findings</p>
-            <h2>What the evaluation showed</h2>
+            <h2>What the study showed</h2>
             <ul>
-              <li>File-based JSON lineage answered “what produced this?” for stored outputs in the reference CLI evaluation.</li>
-              <li>A twenty-run stress test with identical parameters showed 100% reuse after the first run and 0% spurious diffs; new receipts still record reused_from_run_id.</li>
-              <li>A four-test validation suite passed for first-run output, identical reuse, parameter-change diffs, and required receipt fields.</li>
-              <li>The hosted demo preserves the same receipt / diff / reuse contract with a GeoJSON footprint product.</li>
+              <li>A weekly "newest 10 scenes" pipeline reported removals in 92% of 1,020 diffs, yet 60 of 60 sampled "removed" scenes were still in the catalog — they had only fallen out of the window.</li>
+              <li>Item ids never matched across Earth Search and Planetary Computer (0 of 4,140 scenes) and acquisition times differed by up to 34 minutes; the Sentinel-2 product URI matched 99.4%.</li>
+              <li>Reuse saved work in 0.4% of "newest 10" re-runs but 100% for a fixed past period; catalog default orders differ, so the sort order belongs in the query key; in-place updates were rare (0.4%).</li>
             </ul>
           </div>
         </div>
@@ -147,31 +148,43 @@
     <div class="container">
       <p class="research-section-label">Application</p>
       <h2 class="h2 mb16">Screenshots</h2>
-      <p class="text-muted mb16">From the live hosted app. Click any image to zoom in.</p>
+      <p class="text-muted mb16">From the live hosted app and the study. Click any image to zoom in.</p>
       <div class="ss-grid">
         <figure class="ss-card">
           <img src="./research/geolineage/fig-demo-overview.png" alt="GeoLineage hosted app landing page" loading="lazy" decoding="async"/>
-          <figcaption>Landing — hosted demo entry point</figcaption>
+          <figcaption>Landing — what the demo records and why</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geolineage/fig-run-search.png" alt="GeoLineage run search form with Zurich bbox" loading="lazy" decoding="async"/>
-          <figcaption>Run — place search, map bbox, Sentinel-2 collection</figcaption>
+          <img src="./research/geolineage/fig-run-search.png" alt="Run form with area, number of scenes, optional date range and collection" loading="lazy" decoding="async"/>
+          <figcaption>Run — area, number of scenes, optional fixed date range, collection</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geolineage/fig-run-detail.png" alt="GeoLineage run detail with footprint map" loading="lazy" decoding="async"/>
-          <figcaption>Run detail — footprint map, checksum, scene diff</figcaption>
+          <img src="./research/geolineage/fig-run-detail.png" alt="Run detail with footprint map of a reused run" loading="lazy" decoding="async"/>
+          <figcaption>Run detail — a repeated search that reused the previous output</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geolineage/fig-diff-since-last.png" alt="GeoLineage scene id diff against previous run" loading="lazy" decoding="async"/>
-          <figcaption>Diff — added and removed scene ids vs previous run</figcaption>
+          <img src="./research/geolineage/fig-diff-since-last.png" alt="Comparison with the previous run of the same search" loading="lazy" decoding="async"/>
+          <figcaption>What changed — compared only with the previous run of the same search</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geolineage/fig-lineage-receipt.png" alt="GeoLineage downloadable JSON lineage receipt" loading="lazy" decoding="async"/>
-          <figcaption>Receipt — downloadable JSON lineage record</figcaption>
+          <img src="./research/geolineage/fig-lineage-receipt.png" alt="Downloadable JSON lineage receipt" loading="lazy" decoding="async"/>
+          <figcaption>Receipt — query key, inputs with content hashes, output checksum, diff</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geolineage/fig-history.png" alt="GeoLineage history of complete and reused runs" loading="lazy" decoding="async"/>
-          <figcaption>History — complete and reused runs in the cloud</figcaption>
+          <img src="./research/geolineage/fig-history.png" alt="History of complete and reused runs" loading="lazy" decoding="async"/>
+          <figcaption>History — complete and reused runs</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/geolineage/fig-churn.png" alt="Items added and removed per weekly diff of a newest-10 query" loading="lazy" decoding="async"/>
+          <figcaption>Study — a weekly "newest 10" pipeline reports churn in almost every run</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/geolineage/fig-crosscatalog.png" alt="Acquisition time difference for the same scene in two catalogs" loading="lazy" decoding="async"/>
+          <figcaption>Study — the same scene in two catalogs: different ids, times up to 34 minutes apart</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/geolineage/fig-reuse.png" alt="Share of re-runs that can reuse their output by query design" loading="lazy" decoding="async"/>
+          <figcaption>Study — reuse depends on the query design</figcaption>
         </figure>
       </div>
     </div>
