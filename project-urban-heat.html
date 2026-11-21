@@ -68,9 +68,10 @@
     <div class="container">
       <span class="research-kicker">Independent research application</span>
       <h1 class="h1">Urban Heat Island — Łódź</h1>
-      <p class="lead">Sentinel-2 NDVI and Landsat-8 LST combined on a 500&nbsp;m grid across Łódź — with regression, classified rasters, and an open web map for neighbourhood-level exploration.</p>
+      <p class="lead">Twenty clear summer days of Landsat surface temperature (2018–2025) on a 500&nbsp;m grid across Łódź: vegetation explains about 90% of where the city is hot, and the rest shows where it is hotter or cooler than its greenery predicts.</p>
       <div class="research-hero-actions">
-        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Urban%20Heat%20Island%20Lodz" class="btn btn-primary"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="https://github.com/suadarzimanli/urban-heat-island-lodz/blob/main/paper/urban-heat-island-lodz.pdf" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+        <a href="https://github.com/suadarzimanli/urban-heat-island-lodz" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Code on GitHub</a>
         <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" target="_blank" rel="noopener" class="btn btn-outline"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
@@ -81,9 +82,9 @@
   <section class="section">
     <div class="container">
       <div class="research-metrics">
-        <div class="research-metric"><span class="val">1,544</span><span class="lbl">Grid cells (500&nbsp;m over Łódź)</span></div>
-        <div class="research-metric"><span class="val">0.132</span><span class="lbl">R² (NDVI vs LST regression)</span></div>
-        <div class="research-metric"><span class="val">GEE</span><span class="lbl">Sentinel-2 + Landsat-8 pipeline</span></div>
+        <div class="research-metric"><span class="val">0.90</span><span class="lbl">Share of the spatial pattern of surface heat explained by vegetation (R², also on held-out areas)</span></div>
+        <div class="research-metric"><span class="val">20</span><span class="lbl">Clear summer days, 2018–2025 (Landsat 8/9)</span></div>
+        <div class="research-metric"><span class="val">1,176</span><span class="lbl">Cells of 500&nbsp;m on a metric grid</span></div>
       </div>
 
       <div class="research-layout">
@@ -91,7 +92,8 @@
           <div class="card">
             <div class="card-body">
               <p class="research-aside-title">Paper</p>
-              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20Urban%20Heat%20Island%20Lodz" class="btn btn-outline" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <a href="https://github.com/suadarzimanli/urban-heat-island-lodz/blob/main/paper/urban-heat-island-lodz.pdf" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+              <a href="https://github.com/suadarzimanli/urban-heat-island-lodz" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
               <a href="https://suadarzimanli.github.io/urban-heat-island-lodz/" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
@@ -100,10 +102,10 @@
               </ul>
               <p class="research-aside-title" style="margin-top:16px">Technologies</p>
               <ul class="research-aside-list">
-                <li>Leaflet</li>
-                <li>Sentinel-2 NDVI</li>
-                <li>Landsat-8 LST</li>
-                <li>Python · GeoPandas</li>
+                <li>Python · rasterio · NumPy · SciPy</li>
+                <li>Landsat 8/9 · Sentinel-2 · ESA WorldCover</li>
+                <li>Spatial statistics: Moran's I, Gi*</li>
+                <li>Leaflet · Chart.js</li>
               </ul>
             </div>
           </div>
@@ -113,25 +115,27 @@
           <div class="research-block">
             <p class="research-section-label">Overview</p>
             <h2>What this project does</h2>
-            <p>A static web map that layers summer NDVI and land-surface temperature on a 500&nbsp;m grid over Łódź. Users toggle classified rasters, inspect cell values, and open a regression summary — so neighbourhood-level hot and green spots are visible, not only a city-wide average.</p>
+            <p>An open Python pipeline downloads every clear summer Landsat scene of Łódź from 2018 to 2025, measures surface temperature and vegetation from the same scenes, and compares temperatures as anomalies from each day's city median on a metric 500&nbsp;m grid. Built-up share comes from ESA WorldCover. Regressions are checked with spatially blocked cross-validation, and Getis–Ord Gi* maps significant hot and cold spots. An interactive web map shows surface heat, vegetation, built-up share and the places that are hotter or cooler than expected, cell by cell and day by day.</p>
           </div>
+
           <div class="research-block">
             <p class="research-section-label">Research questions</p>
             <h2>What I set out to answer</h2>
             <ul>
-              <li>How strongly is vegetation (NDVI) associated with land-surface temperature at 500&nbsp;m grid scale in Łódź for a summer window?</li>
-              <li>Where do hotter and greener cells cluster — and where do neighbouring cells diverge sharply?</li>
-              <li>Can an interactive map make grid statistics explorable without a separate statistics file?</li>
-              <li>What do the limits of a weak city-wide correlation imply for green-infrastructure planning narratives?</li>
+              <li>How much of the spatial pattern of summer surface heat do vegetation and built-up land explain — and what does built-up land add to vegetation?</li>
+              <li>Is the relationship stable across clear days, cell sizes and data sources?</li>
+              <li>Which places are hotter or cooler than vegetation and built-up land predict, and where are the significant hot and cold spots?</li>
+              <li>Can the whole analysis be rebuilt from open data and explored in a browser?</li>
             </ul>
           </div>
+
           <div class="research-block">
             <p class="research-section-label">Key findings</p>
-            <h2>What the analysis showed</h2>
+            <h2>What the study showed</h2>
             <ul>
-              <li>Greener cells tend to be cooler, but NDVI explains only about 13% of LST variance (R² = 0.132) at this scale and season.</li>
-              <li>Heat and vegetation are patchy — industrial corridors and parks can sit beside hot sealed blocks; a single city average would wash that out.</li>
-              <li>The grid plus interactive map let readers see which cells sit above or below the regression line and where they are on the ground.</li>
+              <li>Vegetation alone explains about 90% of where Łódź is hotter or cooler (R² = 0.90, also on held-out 2&nbsp;km blocks): about 2&nbsp;°C less surface heat per 0.1 NDVI. Built-up share adds only one percentage point.</li>
+              <li>The relationship holds on most single days (median R² 0.85), at 250–1000&nbsp;m cells, without edge cells and with Sentinel-2 vegetation.</li>
+              <li>What vegetation does not explain is organised in space: the dense historic centre is cooler than expected, the airport and large industrial sites are hotter.</li>
             </ul>
           </div>
         </div>
@@ -146,32 +150,44 @@
       <p class="text-muted mb16">Click any image to zoom in.</p>
       <div class="ss-grid">
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-app-overview.png" alt="Urban heat island web app overview" loading="lazy" decoding="async"/>
-          <figcaption>App overview — interactive map with layer controls</figcaption>
+          <img src="./research/urban-heat/fig-app-overview.png" alt="Web map of summer surface heat on the 500 metre grid" loading="lazy" decoding="async"/>
+          <figcaption>Surface heat on the 500&nbsp;m grid — temperature above or below the city median, mean of twenty clear days</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-about-methods.png" alt="About page explaining methods" loading="lazy" decoding="async"/>
-          <figcaption>About &amp; methods — how NDVI and LST were derived</figcaption>
+          <img src="./research/urban-heat/fig-app-pixels.png" alt="Web map of surface heat at satellite pixel resolution" loading="lazy" decoding="async"/>
+          <figcaption>Satellite pixels — the same surface heat at 30&nbsp;m</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-grid-500m.png" alt="500 metre analysis grid over Łódź" loading="lazy" decoding="async"/>
-          <figcaption>500&nbsp;m grid — 1,544 cells covering the city</figcaption>
+          <img src="./research/urban-heat/fig-app-residual.png" alt="Map of cells hotter or cooler than expected" loading="lazy" decoding="async"/>
+          <figcaption>Hotter or cooler than vegetation and built-up share predict, with cells more than 1&nbsp;°C hotter outlined</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-ndvi-classified.png" alt="Classified NDVI vegetation map" loading="lazy" decoding="async"/>
-          <figcaption>NDVI classified — greener vs. sparser vegetation zones</figcaption>
+          <img src="./research/urban-heat/fig-app-spots.png" alt="Map of significant hot and cold spots" loading="lazy" decoding="async"/>
+          <figcaption>Hot and cold spots — Getis–Ord Gi* at a 5% false-discovery rate</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-lst-classified.png" alt="Classified land surface temperature map" loading="lazy" decoding="async"/>
-          <figcaption>LST classified — hotter vs. cooler surface areas</figcaption>
+          <img src="./research/urban-heat/fig-app-panel.png" alt="Selected cell panel with daily anomalies and a scatter plot" loading="lazy" decoding="async"/>
+          <figcaption>Selected cell — its values, its anomaly on each day, and a scatter plot linked to the map</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-regression-modal.png" alt="Regression analysis modal" loading="lazy" decoding="async"/>
-          <figcaption>Regression modal — NDVI vs. LST relationship summary</figcaption>
+          <img src="./research/urban-heat/fig-phone.png" alt="Three phone screens of the web map" loading="lazy" decoding="async"/>
+          <figcaption>Phone — map, controls and legend, scatter plot</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/urban-heat/fig-regression-scatter.png" alt="Scatter plot of NDVI against LST" loading="lazy" decoding="async"/>
-          <figcaption>Scatter plot — vegetation index plotted against temperature</figcaption>
+          <img src="./research/urban-heat/fig-maps.png" alt="Maps of surface heat, vegetation and built-up land" loading="lazy" decoding="async"/>
+          <figcaption>Study — mean summer surface heat, vegetation and built-up land</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-scatter.png" alt="Scatter plots of surface heat against vegetation and built-up share" loading="lazy" decoding="async"/>
+          <figcaption>Study — surface heat against vegetation (R² = 0.90) and built-up share (R² = 0.70)</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-dates.png" alt="Explained variance and slope for each clear day" loading="lazy" decoding="async"/>
+          <figcaption>Study — the relationship on each of the twenty clear days</figcaption>
+        </figure>
+        <figure class="ss-card">
+          <img src="./research/urban-heat/fig-residuals.png" alt="Maps of residuals and hot and cold spots" loading="lazy" decoding="async"/>
+          <figcaption>Study — where the city departs from the expectation, and significant hot and cold spots</figcaption>
         </figure>
       </div>
     </div>
