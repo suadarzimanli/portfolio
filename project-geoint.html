@@ -84,7 +84,7 @@
       <div class="research-metrics">
         <div class="research-metric"><span class="val">7,794</span><span class="lbl">ACLED events (Poland)</span></div>
         <div class="research-metric"><span class="val">95.5%</span><span class="lbl">Events sharing a location with others</span></div>
-        <div class="research-metric"><span class="val">8</span><span class="lbl">Forecast methods compared on 4,092 county-months</span></div>
+        <div class="research-metric"><span class="val">8</span><span class="lbl">Forecast methods compared on 4,212 county-months</span></div>
       </div>
 
       <div class="research-layout">
@@ -131,9 +131,9 @@
             <p class="research-section-label">Key findings</p>
             <h2>What the study showed</h2>
             <ul>
-              <li>Among methods that predict activity, differences are small: the Random Forest’s RMSE is 1.35 against 1.43 for the app’s moving average, but the county-bootstrap interval of the difference includes zero, and the moving average wins on a 6-month window.</li>
+              <li>Among methods that predict activity, differences are small: the Random Forest’s RMSE is 1.34 against 1.41 for the app’s moving average, but the county-bootstrap interval of the difference includes zero, and the moving average wins on a 6-month window.</li>
               <li>With 85% of county-months empty, mean absolute error rewards predicting no activity at all — RMSE and count-aware scores are needed.</li>
-              <li>The evaluation design mattered more than the method: dropping empty months and giving methods different information made the same Random Forest look 30% better; with the same information, errors on active months were equal.</li>
+              <li>The evaluation design mattered more than the method: dropping empty months and giving methods different information made the same Random Forest look 29% better; with the same information, errors on active months were within 0.03 of each other.</li>
             </ul>
           </div>
         </div>
@@ -169,11 +169,11 @@
         </figure>
         <figure class="ss-card">
           <img src="./research/geoint/fig-evaluation.png" alt="Bar chart of forecast error (RMSE) for eight methods" loading="lazy" decoding="async"/>
-          <figcaption>Evaluation — RMSE of eight methods on 4,092 held-out county-months; the app’s method highlighted</figcaption>
+          <figcaption>Evaluation — RMSE of eight methods on 4,212 held-out county-months; the app’s method highlighted</figcaption>
         </figure>
         <figure class="ss-card">
           <img src="./research/geoint/fig-protocol.png" alt="Bar chart comparing two evaluation designs" loading="lazy" decoding="async"/>
-          <figcaption>Evaluation design — the same three methods under two designs: the Random Forest’s apparent 30% advantage disappears when all methods see the same information</figcaption>
+          <figcaption>Evaluation design — the same three methods under two designs: the Random Forest’s apparent 29% advantage disappears when all methods see the same information</figcaption>
         </figure>
       </div>
     </div>
