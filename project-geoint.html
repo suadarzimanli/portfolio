@@ -18,6 +18,7 @@
   <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M15 18l-6-6 6-6"/></symbol>
   <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 18l6-6-6-6"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path stroke-width="2" d="M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path stroke-width="2" d="M15 3h6v6M10 14L21 3"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 4h16v16H4z"/><path stroke-width="2" d="M4 6l8 6 8-6"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M18 6L6 18M6 6l12 12"/></symbol>
 </svg>
@@ -67,9 +68,10 @@
     <div class="container">
       <span class="research-kicker">Independent research application</span>
       <h1 class="h1">GEOINT Crisis Zones</h1>
-      <p class="lead">Interactive mapping of ACLED conflict and protest events in Poland — with filters, charts, and city-level forecasts evaluated on held-out months.</p>
+      <p class="lead">A web GIS for 7,794 ACLED protest and political violence events in Poland (2020–2024) — from national overview to the record of a single event — and a study of how county-level event forecasts should be evaluated.</p>
       <div class="research-hero-actions">
-        <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GEOINT%20Crisis%20Zones" class="btn btn-primary"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+        <a href="https://github.com/suadarzimanli/geoint-crisis-zones/blob/main/paper/geoint-crisis-zones.pdf" class="btn btn-primary" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+        <a href="https://github.com/suadarzimanli/geoint-crisis-zones" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Code on GitHub</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
       </div>
@@ -80,8 +82,8 @@
     <div class="container">
       <div class="research-metrics">
         <div class="research-metric"><span class="val">7,794</span><span class="lbl">ACLED events (Poland)</span></div>
-        <div class="research-metric"><span class="val">1.50</span><span class="lbl">Best forecast MAE (Random Forest)</span></div>
-        <div class="research-metric"><span class="val">2020–24</span><span class="lbl">Observation window</span></div>
+        <div class="research-metric"><span class="val">95.5%</span><span class="lbl">Events sharing a location with others</span></div>
+        <div class="research-metric"><span class="val">8</span><span class="lbl">Forecast methods compared on 4,092 county-months</span></div>
       </div>
 
       <div class="research-layout">
@@ -89,7 +91,8 @@
           <div class="card">
             <div class="card-body">
               <p class="research-aside-title">Paper</p>
-              <a href="mailto:suad.arzimanli@gmail.com?subject=Request%20research%20paper%3A%20GEOINT%20Crisis%20Zones" class="btn btn-outline" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-mail"/></svg> Contact for research paper</a>
+              <a href="https://github.com/suadarzimanli/geoint-crisis-zones/blob/main/paper/geoint-crisis-zones.pdf" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Read the paper (PDF)</a>
+              <a href="https://github.com/suadarzimanli/geoint-crisis-zones" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
                 <li>Independent research</li>
@@ -97,10 +100,10 @@
               </ul>
               <p class="research-aside-title" style="margin-top:16px">Technologies</p>
               <ul class="research-aside-list">
-                <li>ASP.NET Core MVC</li>
-                <li>Google Maps API</li>
+                <li>ASP.NET Core 8 (MVC + API)</li>
+                <li>Google Maps API · marker clustering</li>
                 <li>Chart.js · GeoJSON</li>
-                <li>Python evaluation</li>
+                <li>Python · scikit-learn (evaluation)</li>
               </ul>
             </div>
           </div>
@@ -110,25 +113,25 @@
           <div class="research-block">
             <p class="research-section-label">Overview</p>
             <h2>What this project does</h2>
-            <p>A full-stack GEOINT demonstrator that maps where political violence and protests occurred in Poland, lets analysts filter and chart the record, and surfaces per-city forecasts — with an offline evaluation that compares forecasting methods on a temporal holdout.</p>
+            <p>Analysts filter ACLED events by type, region, county, period and actors, and open any place on the map to read <em>every</em> event recorded there — ACLED geocodes most events to town centres, so a single point in Warsaw holds 1,132 events. A forecast view gives each county’s expected events next month as the average of the three latest complete months, shown beside those three months and the method’s measured accuracy. Desktop and phone layouts; the paper evaluates the forecast against seven alternatives.</p>
           </div>
           <div class="research-block">
             <p class="research-section-label">Research questions</p>
             <h2>What I set out to answer</h2>
             <ul>
-              <li>Can ACLED data be served through a web GIS with filtering, clustering, and charts without page reloads?</li>
-              <li>What spatial and temporal patterns appear in Poland's event record?</li>
-              <li>How well do moving average, naive, and Random Forest models predict city-month counts on held-out data?</li>
-              <li>Is the in-app moving average defensible given the accuracy–interpretability trade-off?</li>
+              <li>How can an event dataset be presented so that a user moves from a national overview to an individual event record — on desktop and phone — while every forecast stays traceable?</li>
+              <li>What spatial and temporal structure does Poland’s event record show, and what does it imply for forecasting?</li>
+              <li>How accurately do simple and learned methods predict next-month county counts when all use the same information?</li>
+              <li>How much do evaluation choices — months without events, information sets, metrics — change the ranking of methods?</li>
             </ul>
           </div>
           <div class="research-block">
             <p class="research-section-label">Key findings</p>
-            <h2>What the evaluation showed</h2>
+            <h2>What the study showed</h2>
             <ul>
-              <li>Random Forest achieved the lowest error (MAE 1.50; RMSE 2.84) on a 12-month holdout.</li>
-              <li>The 3-month moving average used in the app (MAE 2.38) beat the naive baseline (MAE 2.54) while staying traceable.</li>
-              <li>The pipeline from ACLED CSV → GeoJSON → forecast JSON is documented end-to-end in the paper.</li>
+              <li>Among methods that predict activity, differences are small: the Random Forest’s RMSE is 1.35 against 1.43 for the app’s moving average, but the county-bootstrap interval of the difference includes zero, and the moving average wins on a 6-month window.</li>
+              <li>With 85% of county-months empty, mean absolute error rewards predicting no activity at all — RMSE and count-aware scores are needed.</li>
+              <li>The evaluation design mattered more than the method: dropping empty months and giving methods different information made the same Random Forest look 30% better; with the same information, errors on active months were equal.</li>
             </ul>
           </div>
         </div>
@@ -143,32 +146,32 @@
       <p class="text-muted mb16">Click any image to zoom in.</p>
       <div class="ss-grid">
         <figure class="ss-card">
-          <img src="./research/geoint/fig-main-interface.png" alt="Main map interface with event markers across Poland" loading="lazy" decoding="async"/>
-          <figcaption>Main interface — clustered event markers on the Poland map</figcaption>
+          <img src="./research/geoint/fig-main-interface.png" alt="Map of Poland with all events grouped by proximity and the Explore filters" loading="lazy" decoding="async"/>
+          <figcaption>Overview — all 7,794 events grouped by proximity, with filters by type, region, county, period and actors</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-filters.png" alt="Filter panel for event type, city, and year" loading="lazy" decoding="async"/>
-          <figcaption>Filter panel — slice events by type, sub-event, city, and year</figcaption>
+          <img src="./research/geoint/fig-event-place.png" alt="Event card in Warsaw listing the events at one place" loading="lazy" decoding="async"/>
+          <figcaption>Every event at a place — 1,132 events share one point in Warsaw; the card steps through them with ACLED’s note, actors and source</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-map-infowindow.png" alt="Map info window showing event details" loading="lazy" decoding="async"/>
-          <figcaption>Info window — event type, date, city, and notes on click</figcaption>
+          <img src="./research/geoint/fig-forecast-panel.png" alt="Forecast view with accuracy table and county list" loading="lazy" decoding="async"/>
+          <figcaption>Forecast — each county’s next-month expectation with the three months it averages, and the method’s accuracy next to baselines</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-markers-density.png" alt="Marker density view across regions" loading="lazy" decoding="async"/>
-          <figcaption>Marker density — where events concentrate geographically</figcaption>
+          <img src="./research/geoint/fig-charts.png" alt="Insights view with monthly trend and event-type charts" loading="lazy" decoding="async"/>
+          <figcaption>Insights — monthly trend, event types and most active counties, following the filters</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-forecast-panel.png" alt="Forecast panel with city-level predictions" loading="lazy" decoding="async"/>
-          <figcaption>Forecast panel — city-level event and fatality predictions</figcaption>
+          <img src="./research/geoint/fig-phone.png" alt="Three phone screens: overview, forecast sheet and event card" loading="lazy" decoding="async"/>
+          <figcaption>Phone — the map stays visible; the panel becomes a bottom sheet</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-charts.png" alt="Bar, line, and pie charts for event statistics" loading="lazy" decoding="async"/>
-          <figcaption>Charts — events by type, fatalities over time, breakdown by city</figcaption>
+          <img src="./research/geoint/fig-evaluation.png" alt="Bar chart of forecast error (RMSE) for eight methods" loading="lazy" decoding="async"/>
+          <figcaption>Evaluation — RMSE of eight methods on 4,092 held-out county-months; the app’s method highlighted</figcaption>
         </figure>
         <figure class="ss-card">
-          <img src="./research/geoint/fig-streetview-location.png" alt="Street View at an event location" loading="lazy" decoding="async"/>
-          <figcaption>Street View — drop into the exact location of an incident</figcaption>
+          <img src="./research/geoint/fig-protocol.png" alt="Bar chart comparing two evaluation designs" loading="lazy" decoding="async"/>
+          <figcaption>Evaluation design — the same three methods under two designs: the Random Forest’s apparent 30% advantage disappears when all methods see the same information</figcaption>
         </figure>
       </div>
     </div>
