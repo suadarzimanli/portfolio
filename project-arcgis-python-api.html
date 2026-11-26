@@ -81,7 +81,7 @@
       <div class="research-metrics">
         <div class="research-metric"><span class="val">3</span><span class="lbl">Demo workflows (search · layers · geocode)</span></div>
         <div class="research-metric"><span class="val">Anon</span><span class="lbl">Works with public ArcGIS Online content</span></div>
-        <div class="research-metric"><span class="val">CC BY</span><span class="lbl">Educational / demo license (cite if you use it)</span></div>
+        <div class="research-metric"><span class="val">v2.0.0</span><span class="lbl">Release · MIT licence · 22 offline tests in CI</span></div>
       </div>
 
       <div class="research-layout">
@@ -90,7 +90,8 @@
             <div class="card-body">
               <p class="research-aside-title">Links</p>
               <a href="https://suadarzimanli.github.io/ArcGISPythonAPI/" class="btn btn-outline" style="width:100%;margin-bottom:10px" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Live UI</a>
-              <a href="https://github.com/suadarzimanli/ArcGISPythonAPI" class="btn btn-outline" style="width:100%;margin-bottom:20px" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Source repo</a>
+              <a href="https://github.com/suadarzimanli/ArcGISPythonAPI" class="btn btn-outline" style="width:100%;margin-bottom:10px" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Source repo</a>
+              <a href="https://github.com/suadarzimanli/ArcGISPythonAPI/releases/tag/v2.0.0" class="btn btn-outline" style="width:100%;margin-bottom:20px" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Release v2.0.0</a>
               <p class="research-aside-title">Type</p>
               <ul class="research-aside-list">
                 <li>Educational / demo</li>
@@ -119,7 +120,7 @@
             <ul>
               <li><strong>Portal Search</strong> — <code>GIS.content.search()</code> for maps, layers, and apps, with item details and Web Map preview.</li>
               <li><strong>Layer Query</strong> — Feature Service discovery, SQL <code>where</code>, attribute table + Leaflet map, CSV / GeoJSON download.</li>
-              <li><strong>Geocoding</strong> — forward <code>geocode()</code> and map-click <code>reverse_geocode()</code>, with CSV export.</li>
+              <li><strong>Geocoding</strong> — forward <code>geocode()</code> and map-click <code>reverse_geocode()</code>.</li>
               <li><strong>Connection</strong> — anonymous public ArcGIS Online by default; optional credentials for org content.</li>
             </ul>
           </div>
@@ -132,7 +133,8 @@
             <p class="research-section-label">Notes</p>
             <h2>Honest scope</h2>
             <ul>
-              <li>Intended for academic, educational, and demonstration use (CC BY 4.0; cite via CITATION.cff).</li>
+              <li>Open source under the MIT licence; cite via CITATION.cff.</li>
+              <li>Release 2.0.0 adds a small pool of ArcGIS sessions, rate limits per client and overall, and 22 offline tests that run on every push.</li>
               <li>Esri products and portal content remain under Esri’s terms; public items keep their own licenses.</li>
               <li>Free hosted backends may sleep when idle — first requests after cold start can take longer.</li>
             </ul>
