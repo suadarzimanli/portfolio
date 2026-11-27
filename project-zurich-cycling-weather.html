@@ -73,6 +73,7 @@
         <a href="https://suadarzimanli.github.io/zurich-cycling-weather/" target="_blank" rel="noopener" class="btn btn-primary"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
         <a href="https://github.com/suadarzimanli/zurich-cycling-weather" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-github"/></svg> Code on GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.24589808" class="btn btn-outline" target="_blank" rel="noopener">DOI 10.5281/zenodo.24589808</a>
+        <a href="https://github.com/suadarzimanli/zurich-cycling-weather/blob/main/paper_drift/main.pdf" class="btn btn-outline" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-external"/></svg> Working paper (PDF)</a>
         <a href="research.html" class="btn btn-outline">← Research</a>
         <a href="projects.html" class="btn btn-outline">← Projects</a>
       </div>
@@ -93,6 +94,8 @@
             <div class="card-body">
               <p class="research-aside-title">Paper</p>
               <p class="text-muted" style="margin:0 0 12px">Under review at <em>Transportation Research Part A: Policy and Practice</em>. The paper will be linked here once it is published.</p>
+              <p class="text-muted" style="margin:0 0 12px">Companion working paper: <em>Forecasting cycling when the weather effect drifts</em>.</p>
+              <a href="https://github.com/suadarzimanli/zurich-cycling-weather/blob/main/paper_drift/main.pdf" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Working paper (PDF)</a>
               <a href="https://suadarzimanli.github.io/zurich-cycling-weather/" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-external"/></svg> Open live app</a>
               <a href="https://github.com/suadarzimanli/zurich-cycling-weather" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:10px"><svg width="16" height="16"><use href="#i-github"/></svg> Source on GitHub</a>
               <a href="https://doi.org/10.5281/zenodo.24589808" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;margin-bottom:20px">Cite code and data: DOI (Zenodo)</a>
@@ -141,6 +144,7 @@
               <li>The weakening is concentrated on routes with much weekend traffic, and the predictions linked to e-bikes were not supported.</li>
               <li>Cycling grew by about 80% at the long-running counters, so far more people now ride in the rain, and the number of cyclists lost on a wet day still grew.</li>
               <li>For next-day forecasts at 19 counters, a graph neural network that uses nearby counters cut the error of "same weekday last week" by 59% when the day's weather is known (the best case), against 50% for LightGBM and 46% for a network without the graph.</li>
+              <li>Companion working paper: a forecasting model trained once on 2011–2013 under-predicts wet days by about 10 percentage points a decade later, while models trained from 2014 onwards and models retrained every year do not. The tests were fixed before any model was trained.</li>
             </ul>
           </div>
         </div>
